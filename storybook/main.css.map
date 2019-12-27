@@ -1,1 +1,1 @@
-{"version":3,"file":"main.css","sources":["webpack:///Button.css"],"sourcesContent":[".btn {\n    background: red;\n}\n"],"mappings":"AAAA;AACA;AACA;;","sourceRoot":""}
+{"version":3,"file":"main.css","sources":["webpack:///Button.css"],"sourcesContent":[".btn {\n  background: red;\n}\n"],"mappings":"AAAA;AACA;AACA;;","sourceRoot":""}
