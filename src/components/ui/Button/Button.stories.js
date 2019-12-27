@@ -1,10 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
-import { Button } from '../components/ui';
+import { Button } from './Button';
 
 export default {
-  title: 'Components|Atoms/Checkbox',
+  title: 'Components|Atoms/Button',
   decorators: [withKnobs],
 };
 
