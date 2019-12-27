@@ -4,7 +4,7 @@ export interface IButton {
   alt?: string;
   className?: string;
   disabled?: boolean;
-  loading?: boolean;
+  isLoading?: boolean;
   onClick?: any;
   type?: "reset" | "submit" | "button";
   form?: string;

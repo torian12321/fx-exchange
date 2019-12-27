@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from "classnames";
+import { Ellipsis } from ".././Loader";
 import { IButton } from "./Button.interfaces";
-import "./Button.css";
+import styles from "./Button.module.css";
 
 const Button = (props: IButton) => {
   const {
@@ -9,7 +10,7 @@ const Button = (props: IButton) => {
     caption,
     className,
     disabled = false,
-    loading = false,
+    isLoading = false,
     form,
     onClick,
     alt = caption,
@@ -17,7 +18,7 @@ const Button = (props: IButton) => {
   } = props;
 
   const content = children || caption;
-  const isClickable = !disabled && !loading;
+  const isClickable = !disabled && !isLoading;
 
   const onClickHandler = () => {
     if (onClick && isClickable) {
@@ -28,7 +29,8 @@ const Button = (props: IButton) => {
   return (
     <button
       className={classNames(
-        'btn',
+        styles.wrapper,
+        isLoading && styles.wrapper_IsLoading,
         className
       )}
       type={type}
@@ -37,7 +39,8 @@ const Button = (props: IButton) => {
       onClick={onClickHandler}
       disabled={!isClickable}
     >
-      {content}
+      <span className={styles.content}>{content}</span>
+      {isLoading && <Ellipsis className={styles.loader} />}
     </button>
   );
 }

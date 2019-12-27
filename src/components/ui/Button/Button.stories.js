@@ -19,9 +19,24 @@ export const emoji = () => (
   </Button>
 );
 
+export const loading = () => (
+  <>
+  <Button
+    isLoading
+    onClick={action('clicked')}
+    caption={text("Caption", "Hello Storybook")}
+  />
+  <Button
+    onClick={action('clicked')}
+    caption={text("Caption", "Hello Storybook")}
+  />
+  </>
+);
+
 export const withVars = () => (
   <Button
     disabled={boolean("Disabled", false)}
+    isLoading={boolean("isLoading", false)}
     caption={text("Caption", "Hello Storybook")}
     onClick={action('clicked')}
   />
