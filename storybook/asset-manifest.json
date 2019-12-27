@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/fx-exchange/main.css",
+    "main.js": "/fx-exchange/main.e224db627815b953cc9d.bundle.js",
+    "main.css.map": "/fx-exchange/main.css.map",
+    "main.js.map": "/fx-exchange/main.e224db627815b953cc9d.bundle.js.map",
+    "runtime~main.js": "/fx-exchange/runtime~main.e224db627815b953cc9d.bundle.js",
+    "runtime~main.js.map": "/fx-exchange/runtime~main.e224db627815b953cc9d.bundle.js.map",
+    "vendors~main.js": "/fx-exchange/vendors~main.e224db627815b953cc9d.bundle.js",
+    "vendors~main.js.map": "/fx-exchange/vendors~main.e224db627815b953cc9d.bundle.js.map",
+    "iframe.html": "/fx-exchange/iframe.html",
+    "precache-manifest.caa09f5ef3d5ee334a50db212022546a.js": "/fx-exchange/precache-manifest.caa09f5ef3d5ee334a50db212022546a.js",
+    "service-worker.js": "/fx-exchange/service-worker.js"
+  },
+  "entrypoints": [
+    "runtime~main.e224db627815b953cc9d.bundle.js",
+    "vendors~main.e224db627815b953cc9d.bundle.js",
+    "main.css",
+    "main.e224db627815b953cc9d.bundle.js"
+  ]
+}
