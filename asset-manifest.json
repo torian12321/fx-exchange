@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fx-exchange/static/css/main.d1b05096.chunk.css",
+    "main.js": "/fx-exchange/static/js/main.d5b29296.chunk.js",
+    "main.js.map": "/fx-exchange/static/js/main.d5b29296.chunk.js.map",
+    "runtime-main.js": "/fx-exchange/static/js/runtime-main.eb6ae44e.js",
+    "runtime-main.js.map": "/fx-exchange/static/js/runtime-main.eb6ae44e.js.map",
+    "static/js/2.40cfa9ea.chunk.js": "/fx-exchange/static/js/2.40cfa9ea.chunk.js",
+    "static/js/2.40cfa9ea.chunk.js.map": "/fx-exchange/static/js/2.40cfa9ea.chunk.js.map",
+    "index.html": "/fx-exchange/index.html",
+    "precache-manifest.a386baffb2ed56bcb8c5845651d39346.js": "/fx-exchange/precache-manifest.a386baffb2ed56bcb8c5845651d39346.js",
+    "service-worker.js": "/fx-exchange/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/fx-exchange/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.40cfa9ea.chunk.js.LICENSE": "/fx-exchange/static/js/2.40cfa9ea.chunk.js.LICENSE",
+    "static/media/logo.svg": "/fx-exchange/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb6ae44e.js",
+    "static/js/2.40cfa9ea.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.d5b29296.chunk.js"
+  ]
+}
