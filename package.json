@@ -1,7 +1,17 @@
 {
-  "name": "fx-exchange",
-  "version": "0.1.0",
   "private": true,
+  "name": "fx-exchange",
+  "description": "React Currency exchanger.",
+  "author": {
+    "name": "Aitor Palomares",
+    "url": "https://torian12321.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/torian12321/fx-exchange"
+  },
+  "version": "0.1.0",
+  "homepage": "http://torian12321.github.io/fx-exchange",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
