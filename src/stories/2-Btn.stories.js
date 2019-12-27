@@ -6,7 +6,7 @@ export default {
   title: 'Btn',
 };
 
-export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+export const text = () => <Button onClick={action('clicked')} caption='Hello Button' />;
 
 export const emoji = () => (
   <Button onClick={action('clicked')}>
