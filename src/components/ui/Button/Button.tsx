@@ -20,7 +20,7 @@ const Button = (props: IButton) => {
   const isClickable = !disabled && !loading;
 
   const onClickHandler = () => {
-    if (isClickable) {
+    if (onClick && isClickable) {
       onClick();
     }
   };
@@ -34,7 +34,7 @@ const Button = (props: IButton) => {
       type={type}
       aria-label={alt}
       form={form}
-      onClick={onClick && onClickHandler}
+      onClick={onClickHandler}
       disabled={!isClickable}
     >
       {content}
