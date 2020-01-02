@@ -1,3 +1,7 @@
+# Hooks list
+
+[useIsOnline](#useIsOnline)
+
 # `useIsOnline`
 
 > React hook for subscribing to `online`/`offline` events and the `navigator.onLine` property to see current status
