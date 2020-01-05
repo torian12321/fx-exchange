@@ -19,9 +19,15 @@ export const customContent = () => (
   </Button>
 );
 
+export const outline = () => (
+  <>
+    <Button onClick={action('clicked')} caption='Outline => false' />
+    <Button onClick={action('clicked')} caption='Outlined' outline />
+  </>
+);
+
 export const disabled = () => (
   <>
-
     <Button onClick={action('clicked')} caption='Hello Button' />
     <Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' />
     <Button onClick={action('clicked')} caption='Disabled button' disabled />
@@ -36,9 +42,10 @@ export const loading = () => (
 
 export const withVars = () => (
   <Button
+    outline={boolean("Outline", false)}
     disabled={boolean("Disabled", false)}
     isLoading={boolean("isLoading", false)}
-    caption={text("Caption", "Hello Storybook")}
+    caption={text("Caption", "Cutom button")}
     onClick={action('clicked')}
   />
 );

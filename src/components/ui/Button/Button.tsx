@@ -10,6 +10,7 @@ const Button = (props: IButton) => {
     children,
     caption,
     className,
+    outline = false,
     disabled = false,
     isLoading = false,
     form,
@@ -31,6 +32,7 @@ const Button = (props: IButton) => {
     <button
       css={[
         styles.btn,
+        outline && styles.outline,
         !isClickable && styles.btnDisabled
       ]}
       className={className}

@@ -3,6 +3,7 @@ export interface IButton {
   caption?: string;
   alt?: string;
   className?: string;
+  outline?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
   onClick?: any;

@@ -33,6 +33,21 @@ export const btnDisabled = css`
     color: ${theme.colors.states.disabled.text};
   }
 `
+export const outline = css`
+  color: ${color};
+  background: white;
+  border: 1px solid currentColor;
+
+  &:hover {
+    background: white;
+    color: ${functions.darkenColor(color, 5)};
+  }
+  &:focus,
+  &:active {
+    background: white;
+    color: ${functions.darkenColor(color, 10)};
+  }
+`;
 
 export const loader = css`
   font-size: 1em;
