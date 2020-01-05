@@ -1,13 +1,14 @@
 import React from "react";
-import classnames from "classnames";
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { IEllipsis } from './Ellipsis.interfaces';
-import styles from "./Ellipsis.module.css";
+import * as styles from './Ellipsis.styes'
 
-const Ellipsis = ({ className } : IEllipsis) => (
-  <div className={classnames(styles.wrapp, className)}>
-    <span className={styles.dot} />
-    <span className={styles.dot} />
-    <span className={styles.dot} />
+const Ellipsis = ({ className }: IEllipsis) => (
+  <div css={styles.wrapp} className={className}>
+    <span css={styles.dot} />
+    <span css={styles.dot} />
+    <span css={styles.dot} />
   </div>
 );
 

@@ -1,8 +1,11 @@
 import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import classNames from "classnames";
 import { Ellipsis } from ".././Loader";
 import { IButton } from "./Button.interfaces";
-import styles from "./Button.module.css";
+// import styles from "./Button.module.css";
+import * as styles from './Button.styles'
 
 const Button = (props: IButton) => {
   const {
@@ -28,9 +31,13 @@ const Button = (props: IButton) => {
 
   return (
     <button
+      css={[
+        styles.btn,
+        !isClickable && styles.btnDisabled
+      ]}
       className={classNames(
-        styles.wrapper,
-        isLoading && styles.wrapper_IsLoading,
+        // styles.wrapper,
+        // isLoading && styles.wrapper_IsLoading,
         className
       )}
       type={type}
@@ -39,8 +46,8 @@ const Button = (props: IButton) => {
       onClick={onClickHandler}
       disabled={!isClickable}
     >
-      <span className={styles.content}>{content}</span>
-      {isLoading && <Ellipsis className={styles.loader} />}
+      <span>{content}</span>
+      {isLoading && <Ellipsis css={styles.loader} />}
     </button>
   );
 }

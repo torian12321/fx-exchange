@@ -10,6 +10,13 @@ export default {
 
 export const textBtn = () => <Button onClick={action('clicked')} caption='Hello Button' />;
 
+export const disabled = () => (
+  <>
+    <Button onClick={action('clicked')} caption='Hello Button' />
+    <Button onClick={action('clicked')} caption='disabled button' disabled />
+  </>
+);
+
 export const emoji = () => (
   <Button
     onClick={action('clicked')}>
@@ -21,15 +28,15 @@ export const emoji = () => (
 
 export const loading = () => (
   <>
-  <Button
-    isLoading
-    onClick={action('clicked')}
-    caption={text("Caption", "Hello Storybook")}
-  />
-  <Button
-    onClick={action('clicked')}
-    caption={text("Caption", "Hello Storybook")}
-  />
+    <Button
+      isLoading
+      onClick={action('clicked')}
+      caption={text("Caption", "Hello Storybook")}
+    />
+    <Button
+      onClick={action('clicked')}
+      caption={text("Caption", "Hello Storybook")}
+    />
   </>
 );
 

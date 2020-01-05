@@ -1,10 +1,11 @@
 import React from "react";
-import classnames from "classnames";
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { ISpinner } from './Spinner.interfaces';
-import styles from "./Spinner.module.css";
+import * as styles from "./Spinner.styles";
 
-const Spinner = ({ className } : ISpinner) => (
-  <div className={classnames(styles.spinner, className)} />
+const Spinner = ({ className }: ISpinner) => (
+  <div css={styles.spinner} className={className} />
 );
 
 export { Spinner };
