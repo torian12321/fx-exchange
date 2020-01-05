@@ -21,7 +21,7 @@ export const customContent = () => (
 
 export const outline = () => (
   <>
-    <Button onClick={action('clicked')} caption='Outline => false' />
+    <Button onClick={action('clicked')} caption='Outline -> false' />
     <Button onClick={action('clicked')} caption='Outlined' outline />
   </>
 );
@@ -29,7 +29,6 @@ export const outline = () => (
 export const disabled = () => (
   <>
     <Button onClick={action('clicked')} caption='Hello Button' />
-    <Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' />
     <Button onClick={action('clicked')} caption='Disabled button' disabled />
   </>
 );
