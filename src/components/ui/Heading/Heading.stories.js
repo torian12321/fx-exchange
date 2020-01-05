@@ -1,8 +1,9 @@
 import React from 'react';
+import { sbIndex } from 'components/ui';
 import { Heading } from './Heading';
 
 export default {
-  title: 'Components|Atoms/Heading'
+  title: `${sbIndex}Heading`,
 };
 
 export const basic = () => <Heading caption='Header Title' />;
