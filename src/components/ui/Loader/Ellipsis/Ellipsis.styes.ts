@@ -1,6 +1,5 @@
 import { css, keyframes } from '@emotion/core'
-
-const color = '#b159a4'
+import { theme } from 'assets/styles';
 
 const opacitychange = keyframes`
   0%, 100% { opacity: .2; }
@@ -9,7 +8,7 @@ const opacitychange = keyframes`
 
 export const wrapp = css`
   font-size: 12px;
-  color: ${color};
+  color: ${theme.colors.secondary};
 `
 
 export const dot = css`

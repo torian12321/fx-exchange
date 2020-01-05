@@ -7,6 +7,12 @@ export const theme = {
     text: {
       light: 'white',
       dark: 'black'
+    },
+    states: {
+      disabled: {
+        bg: '#ccc',
+        text: 'white',
+      }
     }
   },
   breakpoints: {

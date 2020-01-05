@@ -8,16 +8,9 @@ export default {
   decorators: [withKnobs],
 };
 
-export const textBtn = () => <Button onClick={action('clicked')} caption='Hello Button' />;
+export const basic = () => <Button onClick={action('clicked')} caption='Hello Button' />;
 
-export const disabled = () => (
-  <>
-    <Button onClick={action('clicked')} caption='Hello Button' />
-    <Button onClick={action('clicked')} caption='disabled button' disabled />
-  </>
-);
-
-export const emoji = () => (
+export const customContent = () => (
   <Button
     onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
@@ -26,17 +19,18 @@ export const emoji = () => (
   </Button>
 );
 
+export const disabled = () => (
+  <>
+
+    <Button onClick={action('clicked')} caption='Hello Button' />
+    <Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' /><Button onClick={action('clicked')} caption='Hello Button' />
+    <Button onClick={action('clicked')} caption='Disabled button' disabled />
+  </>
+);
 export const loading = () => (
   <>
-    <Button
-      isLoading
-      onClick={action('clicked')}
-      caption={text("Caption", "Hello Storybook")}
-    />
-    <Button
-      onClick={action('clicked')}
-      caption={text("Caption", "Hello Storybook")}
-    />
+    <Button onClick={action('clicked')} caption='Hello Button' />
+    <Button onClick={action('clicked')} caption='Hello Button' isLoading />
   </>
 );
 

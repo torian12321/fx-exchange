@@ -1,6 +1,5 @@
 import { css, keyframes } from '@emotion/core'
-
-const color = '#b159a4'
+import { theme } from 'assets/styles';
 
 const spin = keyframes`
   0%   { transform: rotate(0deg);   }
@@ -8,7 +7,7 @@ const spin = keyframes`
 `;
 
 export const spinner = css`
-  color: ${color};
+  color: ${theme.colors.secondary};
   padding: 0;
   border: 4px solid currentColor;
   border-top-color: transparent;
