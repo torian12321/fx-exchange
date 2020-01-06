@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState(undefined);
+  const [data, setData] = useState(null);
   const [errors, setErrors] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
 
-  const resetValues = () => {
-    setIsFetching(true);
-    setErrors(null);
-    setData(undefined);
-  }
+  useEffect(() => {
+    fetchUrl();
+  }, []);
 
-  const getUserAsync = async() =>{
+  const fetchUrl = async () =>{
     setIsFetching(true);
 
     try {
@@ -19,22 +17,20 @@ const useFetch = (url: string) => {
       const data = await response.json();
 
       setData(data);
+      setErrors(null);
     } catch(err) {
-      setErrors(err)
+      setData(null);
+      setErrors(err);
     } finally {
       setIsFetching(false);
     }
-  }
+  };
 
-  useEffect(() => {
-    resetValues();
-    getUserAsync();
-  }, [url]);
-  
   return {
     data,
     isFetching,
-    errors
+    errors,
+    reload: fetchUrl,
   };
 };
 
