@@ -4,14 +4,14 @@ import { useFetch } from './components/hooks';
 import './App.css';
 
 const App: React.FC = () => {
-  const { data } = useFetch('https://api.github.com');
+  const { data, errors } = useFetch('https://api.github.com');
 
   React.useEffect(() => {
-    const a = data?.current_user_url;
-
-  console.log('AAA', a);
-  console.log('data', data);
+    console.log('data', data);
   }, [data]);
+  React.useEffect(() => {
+    console.log('errors', errors);
+  }, [errors]);
 
   return (
     <div className="App">

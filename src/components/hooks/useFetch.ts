@@ -5,24 +5,31 @@ const useFetch = (url: string) => {
   const [errors, setErrors] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
 
-  const fetchAsync = async() => {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    return data;
-  }
-
-  useEffect(() => {
+  const resetValues = () => {
     setIsFetching(true);
     setErrors(null);
     setData(undefined);
+  }
 
-    fetchAsync()
-      .then(data => setData(data))
-      .catch(reason => setErrors(reason.message))
-      .finally(() => setIsFetching(false))
+  const getUserAsync = async() =>{
+    setIsFetching(true);
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      setData(data);
+    } catch(err) {
+      setErrors(err)
+    } finally {
+      setIsFetching(false);
+    }
+  }
+
+  useEffect(() => {
+    resetValues();
+    getUserAsync();
   }, [url]);
-
   
   return {
     data,
