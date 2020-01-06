@@ -1,14 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import { useFetch } from './components/hooks';
+import { useFetchCurrencies } from './components/hooks';
 import './App.css';
 
 const App: React.FC = () => {
-  const { data, errors } = useFetch('https://api.github.com');
+  const { currencies, errors } = useFetchCurrencies();
 
   React.useEffect(() => {
-    console.log('data', data);
-  }, [data]);
+    console.log('currencies', currencies);
+  }, [currencies]);
   React.useEffect(() => {
     console.log('errors', errors);
   }, [errors]);
