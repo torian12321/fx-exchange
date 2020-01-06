@@ -1,9 +1,11 @@
 import React from 'react';
+import { withKnobs, text, select } from "@storybook/addon-knobs";
 import { sbIndex } from 'components/ui';
 import { Heading } from './Heading';
 
 export default {
   title: `${sbIndex}Heading`,
+  decorators: [withKnobs],
 };
 
 export const basic = () => <Heading caption='Header Title' />;
@@ -17,4 +19,22 @@ export const customLevel = () => (
     <Heading caption='This is header 5' level={5} />
     <Heading caption='This is header 6' level={6} />
   </>
+);
+
+export const withVars = () => (
+  <Heading
+    caption={text("Caption", "Custom text")}
+    level={select(
+      'Level',
+      {
+        Default: null,
+        Level_1: 1,
+        Level_2: 2,
+        Level_3: 3,
+        Level_4: 4,
+        Level_5: 5,
+        Level_6: 6,
+      }  
+    )}
+  />
 );
