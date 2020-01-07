@@ -1,1 +1,1 @@
-export { MoneyExchange } from './MoneExchange';
+export { WidgetMoneyExchange } from './WidgetMoneyExchange';

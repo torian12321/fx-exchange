@@ -26,13 +26,8 @@ const A = () => {
   )
 }
 
-export const MoneyExchange = () => {
-
-
-  return (
-    <CurrenciesProvider>
-      <A />
-
-    </CurrenciesProvider>
-  );
-}
+export const WidgetMoneyExchange = () => (
+  <CurrenciesProvider>
+    <A />
+  </CurrenciesProvider>
+);

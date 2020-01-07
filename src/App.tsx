@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import { CurrenciesProvider, useCurrenciesState } from './apiContext';
-import { useInterval } from 'hooks';
-import { MoneyExchange } from 'components/widgets';
+// import { useInterval } from 'hooks';
+import { WidgetMoneyExchange } from 'components/widgets';
 import './App.css';
 
 const A = () => {
@@ -25,7 +25,7 @@ const App: React.FC = () => {
     <CurrenciesProvider>
       <div className="App">
         <A />
-        <MoneyExchange />
+        <WidgetMoneyExchange />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
