@@ -56,6 +56,7 @@ const CurrenciesProvider = (props: any) => {
       value={{
         currencies,
         getCurrencyById,
+        updateRates,
       }}
     >
       {children}

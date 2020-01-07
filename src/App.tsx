@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import { CurrenciesProvider, useCurrenciesState } from './apiContext';
+import { useInterval } from './hooks';
 import './App.css';
 
 const A = () => {
-  const { currencies, getCurrencyById } = useCurrenciesState();
+  const { currencies, getCurrencyById, updateRates } = useCurrenciesState();
+  useInterval(updateRates, 10000);
 
   React.useEffect(() => {
     console.log('currencies', currencies);
