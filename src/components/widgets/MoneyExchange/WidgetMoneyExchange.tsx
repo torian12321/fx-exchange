@@ -4,10 +4,12 @@ import { jsx } from '@emotion/core';
 import { CurrenciesProvider, useCurrenciesState } from 'apiContext';
 import { useInterval, useIsOnline } from 'hooks';
 import { Button } from 'components/ui';
-import * as styles from './WidgetMoneyExchange.styles'
+import * as styles from './WidgetMoneyExchange.styles';
+import { ConversionBadge } from './components';
 
 const A = () => {
   const isOnline = useIsOnline();
+  const conversionRate = 100;
   const { getCurrencyById, updateRates } = useCurrenciesState();
   // useInterval(updateRates, 10000);
 
@@ -26,6 +28,7 @@ const A = () => {
 
   return (
     <React.Fragment>
+      <ConversionBadge value={conversionRate} />
       <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} block />
     </React.Fragment>
   )
