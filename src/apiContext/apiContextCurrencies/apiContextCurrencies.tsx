@@ -19,10 +19,16 @@ const CurrenciesProvider = (props: any) => {
 
   const [currencies, setCurrencies]: [any, any] = useState(currenciesIni);
   const [isFetching, setIsFetching]: [boolean, any] = useState(false);
+  const [lastUpdate, setLastUpdate]: [any, any] = useState(Date.now())
 
   useEffect(() => {
     setIsFetching(loadingValues || loadingNames)
   }, [loadingValues, loadingNames]);
+
+  useEffect(() => {
+    // Set a timestamp for updates.
+    setLastUpdate(Date.now());
+  }, [currencies]);
 
   useEffect(() => {
     if (!!currenyValues) {
@@ -63,6 +69,7 @@ const CurrenciesProvider = (props: any) => {
         getCurrencyById,
         updateRates,
         isFetching,
+        lastUpdate,
       }}
     >
       {children}
