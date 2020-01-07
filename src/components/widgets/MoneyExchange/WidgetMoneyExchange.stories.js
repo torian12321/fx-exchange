@@ -5,4 +5,4 @@ export default {
   title: 'Widgets|MoneyExchange',
 };
 
-export const basiccc = () => <WidgetMoneyExchange />;
+export const basic = () => <WidgetMoneyExchange />;

@@ -1,10 +1,9 @@
 import React from 'react';
 import { withKnobs, text, select } from "@storybook/addon-knobs";
-import { sbIndex } from 'components/ui';
 import { Heading } from './Heading';
 
 export default {
-  title: `${sbIndex}Heading`,
+  title: 'UI Components|Heading',
   decorators: [withKnobs],
 };
 
@@ -34,7 +33,7 @@ export const withVars = () => (
         Level_4: 4,
         Level_5: 5,
         Level_6: 6,
-      }  
+      }
     )}
   />
 );

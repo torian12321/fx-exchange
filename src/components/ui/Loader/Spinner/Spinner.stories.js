@@ -1,9 +1,8 @@
 import React from 'react';
-import { sbIndex } from '../';
 import { Spinner } from './Spinner';
 
 export default {
-  title: `${sbIndex}Spinner`,
+  title: 'UI Components|Loaders/Spinner',
 };
 
 export const Basic = () => <Spinner />;
