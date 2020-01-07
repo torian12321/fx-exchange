@@ -5,7 +5,7 @@ export const heading = css`
   margin: .5em 0;
   display: block;
   font-weight: bold;
-  color: ${theme.colors.text.dark};
+  color: ${theme.colors.primary};
   
   h1&,
   h2& {
