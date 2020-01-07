@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState(null);
-  const [errors, setErrors] = useState(null);
-  const [isFetching, setIsFetching] : [boolean, any] = useState(false);
+  const [data, setData]: [any, any] = useState(null);
+  const [errors, setErrors]: [any, any] = useState(null);
+  const [isFetching, setIsFetching]: [boolean, any] = useState(false);
 
   useEffect(() => {
     fetchUrl();
   }, []);
 
-  const fetchUrl = async () =>{
+  const fetchUrl = async () => {
     setIsFetching(true);
 
     try {
@@ -18,7 +18,7 @@ const useFetch = (url: string) => {
 
       setData(data);
       setErrors(null);
-    } catch(err) {
+    } catch (err) {
       setData(null);
       setErrors(err);
     } finally {

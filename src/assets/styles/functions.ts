@@ -21,7 +21,7 @@ export const darkenColor = (color: string, percent: number = 0) => {
 };
 
 
-const isDarkColor = (color: string) => {
+const isDarkColor = (color: string | any) => {
   // Variables for red, green, blue values
   let r, g, b, hsp;
 
