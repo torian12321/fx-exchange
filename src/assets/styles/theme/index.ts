@@ -18,6 +18,7 @@ export const theme = {
       }
     }
   },
+  transitionTime: '.4s',
   breakpoints: {
     xs: '767px',
     sm: '768px',
