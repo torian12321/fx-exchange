@@ -2,13 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useFetch } from 'hooks';
 import { Context } from "./apiContextCurrencies.context";
 import { ICurrency } from './apiContextCurrencies.interfaces';
-
-const API = 'f67b0d18f95c43c4a246d6d2dc63fb86';
-const currenciesIni = [
-  { id: 'EUR', symbol: '€' },
-  { id: 'USD', symbol: '$' },
-  { id: 'GBP', symbol: '£' },
-];
+import { API, currenciesIni } from './constants';
 
 const CurrenciesProvider = (props: any) => {
   const { children, } = props;
