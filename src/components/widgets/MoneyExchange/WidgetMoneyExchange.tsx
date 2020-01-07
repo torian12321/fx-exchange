@@ -21,8 +21,8 @@ const A = () => {
 
   return (
     <React.Fragment>
-      <ConversionBadge value={conversionRate} />
       <CurrencyBox currencyCode='EUR' />
+      <ConversionBadge caption={conversionRate} precentage={100} />
       <CurrencyBox currencyCode='USD' />
       <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} block />
     </React.Fragment>
@@ -31,7 +31,7 @@ const A = () => {
 
 export const WidgetMoneyExchange = () => {
   const isOnline = useIsOnline();
-  
+
   return (
     <CurrenciesProvider>
       <div css={[

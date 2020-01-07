@@ -7,7 +7,9 @@ const color = theme.colors.bg;
 export const wrapper = css`
   width: 100%;
   max-width: 400px;
+  min-width: 260px;
   font-size: 1rem;
+  position: relativa;
   padding: .6em 1em;
   border-radius: ${theme.border.radius};
   box-sizing: border-box;
