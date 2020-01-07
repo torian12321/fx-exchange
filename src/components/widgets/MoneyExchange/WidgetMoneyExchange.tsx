@@ -1,7 +1,10 @@
 import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import { CurrenciesProvider, useCurrenciesState } from 'apiContext';
 import { useInterval, useIsOnline } from 'hooks';
 import { Button } from 'components/ui';
+import * as styles from './WidgetMoneyExchange.styles'
 
 const A = () => {
   const isOnline = useIsOnline();
@@ -22,12 +25,16 @@ const A = () => {
   }
 
   return (
-    <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} />
+    <React.Fragment>
+      <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} />
+    </React.Fragment>
   )
 }
 
 export const WidgetMoneyExchange = () => (
   <CurrenciesProvider>
-    <A />
+    <div css={styles.wrapper}>
+      <A />
+    </div>
   </CurrenciesProvider>
 );

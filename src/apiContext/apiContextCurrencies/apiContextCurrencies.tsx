@@ -6,12 +6,23 @@ import { API, currenciesIni } from './constants';
 
 const CurrenciesProvider = (props: any) => {
   const { children, } = props;
+
   const {
     data: currenyValues,
+    isFetching: loadingValues,
     reload,
   } = useFetch(`https://openexchangerates.org/api/latest.json?app_id=${API}`);
-  const { data: currenyNames } = useFetch(`https://openexchangerates.org/api/currencies.json`);
+  const {
+    data: currenyNames,
+    isFetching: loadingNames,
+  } = useFetch(`https://openexchangerates.org/api/currencies.json`);
+
   const [currencies, setCurrencies]: [any, any] = useState(currenciesIni);
+  const [isFetching, setIsFetching]: [boolean, any] = useState(false);
+
+  useEffect(() => {
+    setIsFetching(loadingValues || loadingNames)
+  }, [loadingValues, loadingNames]);
 
   useEffect(() => {
     if (!!currenyValues) {
@@ -51,6 +62,7 @@ const CurrenciesProvider = (props: any) => {
         currencies,
         getCurrencyById,
         updateRates,
+        isFetching,
       }}
     >
       {children}

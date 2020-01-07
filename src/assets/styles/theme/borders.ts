@@ -1,13 +1,13 @@
 const props = {
-  radius: '4px',
+  radius: '8px',
   width: '1px',
   style: 'solid',
-  color: 'red',
+  color: '#ccc',
 };
 
 const border = {
   ...props,
-  style: `${props.style} ${props.width} ${props.color}`,
+  border: `${props.style} ${props.width} ${props.color}`,
 }
 
 export default border;

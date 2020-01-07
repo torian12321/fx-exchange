@@ -2,7 +2,7 @@ import React from 'react';
 import { WidgetMoneyExchange } from './WidgetMoneyExchange';
 
 export default {
-  title: `Widgets|MoneyExchange`,
+  title: 'Widgets|MoneyExchange',
 };
 
-export const basic = () => <WidgetMoneyExchange />;
+export const basiccc = () => <WidgetMoneyExchange />;
