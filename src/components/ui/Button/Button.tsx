@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from "classnames";
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Ellipsis } from ".././Loader";
@@ -35,7 +36,7 @@ const Button = (props: IButton) => {
         outline && styles.outline,
         !isClickable && styles.btnDisabled
       ]}
-      className={className}
+      className={classNames(className)}
       type={type}
       aria-label={alt}
       form={form}

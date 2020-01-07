@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { IHeading } from "./Heading.interfaces";
@@ -11,7 +12,7 @@ const Heading = (props: IHeading) => {
   return (
     <TagName
       css={styles.heading}
-      className={className}
+      className={classNames(className)}
     >
       {caption}
     </TagName>
