@@ -26,7 +26,7 @@ const A = () => {
 
   return (
     <React.Fragment>
-      <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} />
+      <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} block />
     </React.Fragment>
   )
 }

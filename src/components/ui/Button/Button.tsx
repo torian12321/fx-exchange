@@ -11,6 +11,7 @@ const Button = (props: IButton) => {
     children,
     caption,
     className,
+    block = false,
     outline = false,
     disabled = false,
     isLoading = false,
@@ -34,7 +35,8 @@ const Button = (props: IButton) => {
       css={[
         styles.btn,
         outline && styles.outline,
-        !isClickable && styles.btnDisabled
+        block && styles.btnBlock,
+        !isClickable && styles.btnDisabled,
       ]}
       className={classNames(className)}
       type={type}

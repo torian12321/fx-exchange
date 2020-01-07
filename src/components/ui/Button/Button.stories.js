@@ -25,6 +25,13 @@ export const outline = () => (
     <Button onClick={action('clicked')} caption='Outlined' outline />
   </>
 );
+export const block = () => (
+  <>
+    Display the button usign the full width:
+    <Button onClick={action('clicked')} caption='Block' block />
+    <Button onClick={action('clicked')} caption='Block outlined' block outline />
+  </>
+);
 
 export const disabled = () => (
   <>
@@ -42,6 +49,7 @@ export const loading = () => (
 export const withVars = () => (
   <Button
     outline={boolean("Outline", false)}
+    block={boolean("Block", false)}
     disabled={boolean("Disabled", false)}
     isLoading={boolean("isLoading", false)}
     caption={text("Caption", "Cutom button")}

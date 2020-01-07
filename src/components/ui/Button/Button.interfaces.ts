@@ -4,6 +4,7 @@ export interface IButton {
   alt?: string;
   className?: string;
   outline?: boolean;
+  block?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
   onClick?: any;

@@ -7,6 +7,7 @@ export const btn = css`
   outline: none;
   font-size: 1rem;
   padding: .4em 2em;
+  margin: .4em 0;
   border-radius: 10em;
   border: none;
   box-sizing: border-box;
@@ -23,7 +24,11 @@ export const btn = css`
   &:active {
     background: ${functions.darkenColor(color, 10)};
   }
-`
+`;
+export const btnBlock = css`
+  display: block;
+  width: 100%;
+`;
 
 export const btnDisabled = css`
   &,
@@ -32,7 +37,8 @@ export const btnDisabled = css`
     background: ${theme.colors.states.disabled.bg};
     color: ${theme.colors.states.disabled.text};
   }
-`
+`;
+
 export const outline = css`
   color: ${color};
   background: white;
