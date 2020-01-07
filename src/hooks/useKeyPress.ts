@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useEventListener } from "components/hooks";
+import { useEventListener } from "hooks";
 
 const useKeyPress = (targetKey: string | number) => {
   // State for keeping track of whether key is pressed

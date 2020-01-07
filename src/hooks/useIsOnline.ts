@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useEventListener } from "components/hooks";
+import { useEventListener } from "hooks";
 
 const getOnlineStatus = () => (
-    (typeof navigator !== "undefined" && typeof navigator.onLine === "boolean")
+  (typeof navigator !== "undefined" && typeof navigator.onLine === "boolean")
     ? navigator.onLine
     : true
 );
