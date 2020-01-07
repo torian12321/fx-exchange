@@ -1,5 +1,6 @@
 import { css } from '@emotion/core'
 import { theme, functions } from 'assets/styles';
+import { transparentize } from 'assets/styles/functions';
 
 const color = theme.colors.bg;
 
@@ -15,8 +16,13 @@ export const wrapper = css`
   border: ${theme.border.border};
   background: ${color};
   color: ${functions.smartTextColor(color)};
+`;
+
+export const wrapperActive = css`
+  transition: box-shadow .4s;
 
   &:hover {
     background: ${functions.darkenColor(color, 2)};
+    box-shadow: 0 0 1rem 0 ${transparentize(theme.colors.secondary, 0.16)};
   }
 `;

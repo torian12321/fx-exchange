@@ -31,10 +31,17 @@ const A = () => {
   )
 }
 
-export const WidgetMoneyExchange = () => (
-  <CurrenciesProvider>
-    <div css={styles.wrapper}>
-      <A />
-    </div>
-  </CurrenciesProvider>
-);
+export const WidgetMoneyExchange = () => {
+  const isOnline = useIsOnline();
+  
+  return (
+    <CurrenciesProvider>
+      <div css={[
+        styles.wrapper,
+        isOnline && styles.wrapperActive
+      ]}>
+        <A />
+      </div>
+    </CurrenciesProvider>
+  )
+};
