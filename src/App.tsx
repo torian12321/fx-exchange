@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
-import { useFetchCurrencies } from './hooks';
-import './App.css';
 import { CurrenciesProvider, useCurrenciesState } from './apiContext';
+import './App.css';
 
 const A = () => {
   const { currencies, getCurrencyById } = useCurrenciesState();
@@ -19,21 +18,6 @@ const A = () => {
   )
 }
 const App: React.FC = () => {
-  const { currencies, errors } = useFetchCurrencies();
-  const { values } = useCurrenciesState();
-
-  React.useEffect(() => {
-    console.log('currencies', values);
-  }, [values]);
-
-
-  // React.useEffect(() => {
-  //   console.log('currencies', currencies);
-  // }, [currencies]);
-  // React.useEffect(() => {
-  //   console.log('errors', errors);
-  // }, [errors]);
-
   return (
     <CurrenciesProvider>
       <div className="App">
@@ -42,7 +26,7 @@ const App: React.FC = () => {
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
