@@ -10,21 +10,21 @@ import { Button, Form, useForm } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
 import { ConversionBadge, /* CurrencyBox, */ Select, Input } from './components';
 
-const currList = [
-  { value: 'EUR', label: 'Euro'},
-  { value: 'USD', label: 'Dollar'},
-  { value: 'GBP', label: 'Pound'},
-];
 const FIELD_FROM_VAL = 'from';
-const FIELD_TO_VAL = 'from';
+const FIELD_TO_VAL = 'to';
+const currList = [
+  { value: 'EUR', label: 'Euro' },
+  { value: 'USD', label: 'Dollar' },
+  { value: 'GBP', label: 'Pound' },
+];
 
 const Content = ({
   isOnline = false,
   isLoading = false,
-} : any) => {
+}: any) => {
   const { getCurrencyById, updateRates, lastUpdate } = useCurrenciesState();
   const { getCurrencyById: getUserCurr } = useWalletState();
-  const { submit, values } = useForm();
+  const { submit, values, setValue, reset } = useForm();
 
   const [conversionRate, setConversionRate] = useState(100);
   const [currFrom, setCurrFrom] = useState('EUR');
@@ -33,7 +33,7 @@ const Content = ({
 
   // Get periodically new rate values
   useInterval(updateRates, 10000);
-  
+
   useEffect(() => {
     const c = getUserCurr(currFrom);
 
@@ -42,7 +42,10 @@ const Content = ({
   }, [currFrom]);
 
   useEffect(() => {
-    console.log('aaaa', currFrom);
+    reset();
+  }, [currFrom, currTo]);
+
+  useEffect(() => {
     const f = getCurrencyById(currFrom);
     const t = getCurrencyById(currTo);
 
@@ -50,11 +53,6 @@ const Content = ({
       setConversionRate(t.rate / f.rate)
     }
 
-    console.log('ffff', f);
-    console.log(conversionRate)
-    // setIsFetching(loadingValues || loadingNames)
-
-    // setConversionRate();
   }, [currFrom, currTo, lastUpdate]);
 
 
@@ -75,6 +73,19 @@ const Content = ({
     setCurrTo(opVal);
   }
 
+  const updateTo = (val: any) => {
+    // setValue(
+    //   FIELD_TO_VAL,
+    //   (val * conversionRate).toFixed(2)
+    // );
+  }
+  const updateFrom = (val: any) => {
+    // setValue(
+    //   FIELD_FROM_VAL,
+    //   (val / conversionRate).toFixed(2)
+    // );
+  }
+
   return (
     <React.Fragment>
       {!!isOnline ? (
@@ -85,7 +96,7 @@ const Content = ({
             onChange={selectFromChange}
           />
           {maxVal}
-          <Input name={FIELD_FROM_VAL} placeholder='0' max={maxVal} />
+          <Input name={FIELD_FROM_VAL} placeholder='0' max={maxVal} onChange={updateTo} disabled={isLoading} />
           {/* <CurrencyBox currencyCode='EUR' /> */}
           <ConversionBadge
             caption={`1 ${currFrom} is ${conversionRate.toFixed(2)} ${currTo}`}
@@ -96,12 +107,13 @@ const Content = ({
             options={currList}
             loading={!!isLoading}
             onChange={selectToChange}
+            defaultValue={1}
           />
-          <Input name={FIELD_TO_VAL} placeholder='0' max={maxVal * conversionRate} />
+          <Input name={FIELD_TO_VAL} placeholder='0' max={maxVal * conversionRate} onChange={updateFrom} disabled={isLoading} />
         </>
-        ) : <span>You are currently offline...</span>
+      ) : <span>You are currently offline...</span>
       }
-      <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} block isLoading={!!isLoading}/>
+      <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} block isLoading={!!isLoading} />
     </React.Fragment>
   )
 }
@@ -110,7 +122,10 @@ export const WidgetMoneyExchange = ({ onSubmit, ...rest }: any) => {
   const isOnline = useIsOnline();
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} initialValues={{
+      [FIELD_FROM_VAL]: 0,
+      [FIELD_TO_VAL]: 0,
+    }}>
       <div css={[
         styles.wrapper,
         isOnline && styles.wrapperActive

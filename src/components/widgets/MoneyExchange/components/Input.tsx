@@ -17,14 +17,15 @@ const Input = (props: any) => {
   const handleChange = (e: any) => {
     e.preventDefault();
     const val = e.target.value;
+    const v = (val < max) ? val : max;
 
     setValue(
       name,
-      styleNumber((val < max) ? val : max)
+      styleNumber(v)
     );
 
     if (onChange) {
-      onChange(value);
+      onChange(v);
     }
   };
 

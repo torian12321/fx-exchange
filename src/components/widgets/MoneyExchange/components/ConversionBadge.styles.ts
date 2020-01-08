@@ -16,6 +16,7 @@ export const progressBar = css`
   height: 2px;
   top: 50%;
   background: ${theme.colors.primary};
+  transition: width ${theme.transitionTime} ease-out;
 `;
 
 export const badge = css`

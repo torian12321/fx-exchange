@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { jsx } from '@emotion/core';
 import Sel from 'react-select';
 
-export const Select = (props : any) => {
+export const Select = (props: any) => {
   const {
     name = '',
     options = [{}],
     onChange = false,
     loading = false,
+    defaultValue = 0,
   } = props;
 
   const handleOnChange = ({ value }: any) => {
@@ -18,7 +19,7 @@ export const Select = (props : any) => {
   return (
     <Sel
       // className="basic-single"
-      defaultValue={options[0]}
+      defaultValue={options[defaultValue]}
       isDisabled={!!loading}
       isLoading={!!loading}
       isClearable={false}
