@@ -24,7 +24,7 @@ const Input = (props: any) => {
     );
 
     if (onChange) {
-      onChange((val < max) ? val : max);
+      onChange(value);
     }
   };
 
