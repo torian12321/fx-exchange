@@ -7,8 +7,10 @@ import { Button, Form, Input, useForm } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
 import { ConversionBadge, CurrencyBox } from './components';
 
-const Content = () => {
-  const isOnline = useIsOnline();
+const Content = ({
+  isOnline = false,
+  isLoading = false,
+} : any) => {
   // const conversionRate = 100;
   const [conversionRate, setConversionRate] = useState(100);
   const [currFrom, setCurrFrom] = useState('EUR');
@@ -48,16 +50,21 @@ const Content = () => {
 
   return (
     <React.Fragment>
-      <Input name='from' decimals='from' placeholder='0' />
-      <CurrencyBox currencyCode='EUR' />
-      <ConversionBadge caption={conversionRate} precentage={100} />
-      <CurrencyBox currencyCode='USD' />
-      <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} block />
+      {!!isOnline ? (
+        <>
+          <Input name='from' decimals='from' placeholder='0' />
+          <CurrencyBox currencyCode='EUR' />
+          <ConversionBadge caption={conversionRate} precentage={100} />
+          <CurrencyBox currencyCode='USD' />
+        </>
+        ) : <span>You are currently offline...</span>
+      }
+      <Button caption='Exchange' onClick={handleClick} disabled={!isOnline} block isLoading={!!isLoading}/>
     </React.Fragment>
   )
 }
 
-export const WidgetMoneyExchange = ({ onSubmit }: any) => {
+export const WidgetMoneyExchange = ({ onSubmit, ...rest }: any) => {
   const isOnline = useIsOnline();
 
   return (
@@ -66,7 +73,7 @@ export const WidgetMoneyExchange = ({ onSubmit }: any) => {
         styles.wrapper,
         isOnline && styles.wrapperActive
       ]}>
-        <Content />
+        <Content {...rest} isOnline={isOnline} />
       </div>
     </Form>
   )

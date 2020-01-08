@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Heading } from 'components/ui';
@@ -6,21 +6,29 @@ import { WidgetMoneyExchange } from 'components/widgets';
 import { useWalletState } from 'apiContext';
 import * as styles from "./Body.styles";
 
-const Body = ({ children }: any) => {
-  const { addMoney } = useWalletState();
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-  const handleExchange = (values: any) => {
-    const { fromValue } = values;
+const Body = ({ children }: any) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const { addMoney, removeMoney } = useWalletState();
+
+  const handleExchange = async (values: any) => {
+    // Mock an API call delay
+    setIsLoading(true);
+    await sleep(2000);
+    setIsLoading(false);
+
+    // const { fromValue } = values;
 
     addMoney('EUR', 55);
-    console.log('AAAA', values);
+    removeMoney('USD', 55);
+    // alert(`Transaction Done`);
   };
-
 
   return (
     <div css={styles.main}>
       <Heading caption='Convert Money' level={4} />
-      <WidgetMoneyExchange onSubmit={handleExchange} />
+      <WidgetMoneyExchange onSubmit={handleExchange} isLoading={isLoading} />
     </div>
   );
 };
