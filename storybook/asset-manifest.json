@@ -1,21 +1,25 @@
 {
   "files": {
     "main.css": "/fx-exchange/main.css",
-    "main.js": "/fx-exchange/main.537fa9c60a5642fdf00e.bundle.js",
+    "main.js": "/fx-exchange/main.2be2bc1418452d601ea2.bundle.js",
     "main.css.map": "/fx-exchange/main.css.map",
-    "main.js.map": "/fx-exchange/main.537fa9c60a5642fdf00e.bundle.js.map",
-    "runtime~main.js": "/fx-exchange/runtime~main.537fa9c60a5642fdf00e.bundle.js",
-    "runtime~main.js.map": "/fx-exchange/runtime~main.537fa9c60a5642fdf00e.bundle.js.map",
-    "vendors~main.js": "/fx-exchange/vendors~main.537fa9c60a5642fdf00e.bundle.js",
-    "vendors~main.js.map": "/fx-exchange/vendors~main.537fa9c60a5642fdf00e.bundle.js.map",
+    "main.js.map": "/fx-exchange/main.2be2bc1418452d601ea2.bundle.js.map",
+    "runtime~main.js": "/fx-exchange/runtime~main.2be2bc1418452d601ea2.bundle.js",
+    "runtime~main.js.map": "/fx-exchange/runtime~main.2be2bc1418452d601ea2.bundle.js.map",
+    "vendors~main.js": "/fx-exchange/vendors~main.2be2bc1418452d601ea2.bundle.js",
+    "vendors~main.js.map": "/fx-exchange/vendors~main.2be2bc1418452d601ea2.bundle.js.map",
     "iframe.html": "/fx-exchange/iframe.html",
-    "precache-manifest.04224914103ebac7402c4d066c837e43.js": "/fx-exchange/precache-manifest.04224914103ebac7402c4d066c837e43.js",
-    "service-worker.js": "/fx-exchange/service-worker.js"
+    "precache-manifest.4dc3c41d61d9d0d2fe58564f338c8ed3.js": "/fx-exchange/precache-manifest.4dc3c41d61d9d0d2fe58564f338c8ed3.js",
+    "service-worker.js": "/fx-exchange/service-worker.js",
+    "static/media/EUR.png": "/fx-exchange/static/media/EUR.0beefbe0.png",
+    "static/media/GBP.png": "/fx-exchange/static/media/GBP.0efe0676.png",
+    "static/media/USD.png": "/fx-exchange/static/media/USD.17b1d85a.png",
+    "static/media/profit.svg": "/fx-exchange/static/media/profit.57bf8352.svg"
   },
   "entrypoints": [
-    "runtime~main.537fa9c60a5642fdf00e.bundle.js",
-    "vendors~main.537fa9c60a5642fdf00e.bundle.js",
+    "runtime~main.2be2bc1418452d601ea2.bundle.js",
+    "vendors~main.2be2bc1418452d601ea2.bundle.js",
     "main.css",
-    "main.537fa9c60a5642fdf00e.bundle.js"
+    "main.2be2bc1418452d601ea2.bundle.js"
   ]
 }
