@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/fx-exchange/main.css",
-    "main.js": "/fx-exchange/main.2be2bc1418452d601ea2.bundle.js",
+    "main.js": "/fx-exchange/main.1c627fc3f5de436c611d.bundle.js",
     "main.css.map": "/fx-exchange/main.css.map",
-    "main.js.map": "/fx-exchange/main.2be2bc1418452d601ea2.bundle.js.map",
-    "runtime~main.js": "/fx-exchange/runtime~main.2be2bc1418452d601ea2.bundle.js",
-    "runtime~main.js.map": "/fx-exchange/runtime~main.2be2bc1418452d601ea2.bundle.js.map",
-    "vendors~main.js": "/fx-exchange/vendors~main.2be2bc1418452d601ea2.bundle.js",
-    "vendors~main.js.map": "/fx-exchange/vendors~main.2be2bc1418452d601ea2.bundle.js.map",
+    "main.js.map": "/fx-exchange/main.1c627fc3f5de436c611d.bundle.js.map",
+    "runtime~main.js": "/fx-exchange/runtime~main.1c627fc3f5de436c611d.bundle.js",
+    "runtime~main.js.map": "/fx-exchange/runtime~main.1c627fc3f5de436c611d.bundle.js.map",
+    "vendors~main.js": "/fx-exchange/vendors~main.1c627fc3f5de436c611d.bundle.js",
+    "vendors~main.js.map": "/fx-exchange/vendors~main.1c627fc3f5de436c611d.bundle.js.map",
     "iframe.html": "/fx-exchange/iframe.html",
-    "precache-manifest.4dc3c41d61d9d0d2fe58564f338c8ed3.js": "/fx-exchange/precache-manifest.4dc3c41d61d9d0d2fe58564f338c8ed3.js",
+    "precache-manifest.7f07e8ec0c3de50b4383cae9d46c9f4a.js": "/fx-exchange/precache-manifest.7f07e8ec0c3de50b4383cae9d46c9f4a.js",
     "service-worker.js": "/fx-exchange/service-worker.js",
     "static/media/EUR.png": "/fx-exchange/static/media/EUR.0beefbe0.png",
     "static/media/GBP.png": "/fx-exchange/static/media/GBP.0efe0676.png",
     "static/media/USD.png": "/fx-exchange/static/media/USD.17b1d85a.png",
-    "static/media/profit.svg": "/fx-exchange/static/media/profit.57bf8352.svg"
+    "static/media/profit.svg": "/fx-exchange/static/media/profit.8dcba71a.svg"
   },
   "entrypoints": [
-    "runtime~main.2be2bc1418452d601ea2.bundle.js",
-    "vendors~main.2be2bc1418452d601ea2.bundle.js",
+    "runtime~main.1c627fc3f5de436c611d.bundle.js",
+    "vendors~main.1c627fc3f5de436c611d.bundle.js",
     "main.css",
-    "main.2be2bc1418452d601ea2.bundle.js"
+    "main.1c627fc3f5de436c611d.bundle.js"
   ]
 }
