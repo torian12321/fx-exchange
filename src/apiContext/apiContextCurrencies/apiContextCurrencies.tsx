@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useFetch } from 'hooks';
 import { Context } from "./apiContextCurrencies.context";
-import { ICurrency } from './apiContextCurrencies.interfaces';
+import { ICurrency, CurrencyCodes } from './apiContextCurrencies.interfaces';
 import { API, currenciesIni } from './constants';
 
 const CurrenciesProvider = (props: any) => {
@@ -59,7 +59,7 @@ const CurrenciesProvider = (props: any) => {
   }
 
 
-  const getCurrencyById = (id: string) =>
+  const getCurrencyById = (id: CurrencyCodes) =>
     currencies.find((c: ICurrency) => c.id === id) || {};
 
   return (

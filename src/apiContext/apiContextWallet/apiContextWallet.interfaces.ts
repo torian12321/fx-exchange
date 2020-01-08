@@ -6,8 +6,8 @@ export enum CurrencyCodes {
 
 export interface ICurrency {
   id: CurrencyCodes,
+  value: number,
   name: string,
   shortName: string;
   symbol: string,
-  rate?: string | number,
 }

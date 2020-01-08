@@ -7,7 +7,7 @@ import { Button } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
 import { ConversionBadge, CurrencyBox } from './components';
 
-const A = () => {
+const Content = () => {
   const isOnline = useIsOnline();
   const conversionRate = 100;
   const { getCurrencyById, updateRates } = useCurrenciesState();
@@ -38,7 +38,7 @@ export const WidgetMoneyExchange = () => {
         styles.wrapper,
         isOnline && styles.wrapperActive
       ]}>
-        <A />
+        <Content />
       </div>
     </CurrenciesProvider>
   )

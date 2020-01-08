@@ -1,16 +1,15 @@
 import { css } from '@emotion/core'
 import { theme, functions } from 'assets/styles';
-import { transparentize } from 'assets/styles/functions';
 
 const color = theme.colors.bgLight;
 
 export const wrapper = css`
+  display: inline-flex;
   width: 100%;
-  max-width: 400px;
-  min-width: 260px;
   font-size: 1rem;
-  position: relativa;
+  position: relative;
   padding: .6em 1em;
+  margin: 0 0 .5em;
   border-radius: ${theme.border.radius};
   box-sizing: border-box;
   line-height: 2em;
@@ -20,11 +19,12 @@ export const wrapper = css`
   color: ${functions.smartTextColor(color)};
 `;
 
-export const wrapperActive = css`
-  transition: box-shadow .4s;
-
-  &:hover {
-    background: ${functions.darkenColor(color, 2)};
-    box-shadow: 0 0 1rem 0 ${transparentize(theme.colors.secondary, 0.16)};
-  }
+export const image = css`
+  font-size: 2em;
+  width: 1em;
+  height: 1em;
+`;
+export const label = css`
+  font-weight: bold;
+  margin: 0 1em;
 `;

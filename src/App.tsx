@@ -1,10 +1,12 @@
 import React from 'react';
-import { CurrenciesProvider } from './apiContext';
+import { CurrenciesProvider, WalletProvider } from './apiContext';
 import { Layout } from './App/Layout';
 
 const App: React.FC = () => (
   <CurrenciesProvider>
-    <Layout />
+    <WalletProvider>
+      <Layout />
+    </WalletProvider>
   </CurrenciesProvider>
 );
 

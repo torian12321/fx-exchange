@@ -30,6 +30,7 @@ const MoneyExchange = () => (
 ```
 
 ## TODO
+  - Add typing.
   - API key should be externally provided.
   - Probably all currencies info should come from a single endpoint.
   - Implement `useReducer` for more scalable solution???.
