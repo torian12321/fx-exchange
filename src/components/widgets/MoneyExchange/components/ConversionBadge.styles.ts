@@ -29,8 +29,8 @@ export const badge = css`
   border-radius: 6em;
 
   transition: 
-    height ${theme.transitionTime} ease-out,
-    opacity ${theme.transitionTime} ease 0.5s;
+    background ${theme.transitionTime} ease-out,
+    color ${theme.transitionTime} ease 0.5s;
 
   & > * {
     display: inline-block;

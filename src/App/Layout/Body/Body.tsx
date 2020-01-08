@@ -8,7 +8,7 @@ import * as styles from "./Body.styles";
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-const Body = ({ children }: any) => {
+const Body = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { addMoney, removeMoney } = useWalletState();
 
@@ -20,9 +20,10 @@ const Body = ({ children }: any) => {
 
     // const { fromValue } = values;
 
-    addMoney('EUR', 55);
-    removeMoney('USD', 55);
-    // alert(`Transaction Done`);
+    await addMoney('EUR', 55);
+    await sleep(100);
+    await removeMoney('USD', 55);
+    // alert(`Transaction Done!!!`);
   };
 
   return (
