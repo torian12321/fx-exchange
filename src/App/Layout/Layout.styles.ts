@@ -18,7 +18,7 @@ export const main = css`
   grid-template-areas: "h"
                        "m"
                        "b";
-  grid-template-rows: 50px 200px 1fr; 1fr
+  grid-template-rows: 50px auto 1fr;
   grid-template-columns: 1fr;
 
   @media (min-width: ${theme.breakpoints.md}) {
