@@ -14,6 +14,7 @@ const WalletProvider = (props: any) => {
   }, [currencies]);
 
   const addMoney = (id: CurrencyCodes, value: number = 0) => {
+    console.log('currencies', id, currencies);
     setCurrencies(
       currencies.map((c: ICurrency) => (c.id === id)
         ? {
@@ -23,6 +24,8 @@ const WalletProvider = (props: any) => {
           ...c
         })
     );
+
+    console.log('currencies', currencies);
   };
 
   const removeMoney = (id: CurrencyCodes, value: number = 0) => {

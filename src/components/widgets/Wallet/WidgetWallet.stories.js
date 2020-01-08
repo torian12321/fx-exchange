@@ -1,5 +1,5 @@
 import React from 'react';
-import { WidgetWallet } from './WidgetWallet';
+import { WidgetWalletStoryBook as WidgetWallet } from './WidgetWallet';
 
 export default {
   title: 'Widgets|WidgetWallet',

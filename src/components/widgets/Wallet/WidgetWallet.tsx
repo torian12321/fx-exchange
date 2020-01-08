@@ -5,7 +5,7 @@ import { WalletProvider, useWalletState } from 'apiContext';
 import { Pocket } from './components/Pocket';
 import * as styles from "./WidgetWallet.styles";
 
-const Content = () => {
+export const WidgetWallet = () => {
   const { currencies, lastUpdate } = useWalletState();
 
   return (
@@ -15,8 +15,8 @@ const Content = () => {
   )
 }
 
-export const WidgetWallet = () => (
+export const WidgetWalletStoryBook = () => (
   <WalletProvider>
-    <Content />
+    <WidgetWallet />
   </WalletProvider>
 );

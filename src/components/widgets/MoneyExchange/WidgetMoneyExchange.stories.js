@@ -1,5 +1,5 @@
 import React from 'react';
-import { WidgetMoneyExchange } from './WidgetMoneyExchange';
+import { WidgetMoneyExchangeStorybook as WidgetMoneyExchange } from './WidgetMoneyExchange';
 
 export default {
   title: 'Widgets|MoneyExchange',
