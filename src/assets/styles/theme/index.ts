@@ -13,8 +13,8 @@ export const theme = {
     },
     states: {
       disabled: {
-        bg: '#aaaaaa',
-        text: 'white',
+        bg: '#f2f2f2',
+        text: '#cccccc',
       }
     }
   },

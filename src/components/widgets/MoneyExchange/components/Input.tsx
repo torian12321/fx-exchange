@@ -1,11 +1,12 @@
 import React from "react";
-import classNames from "classnames";
-// import { IInput } from "./Input.interfaces";
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { useForm } from "components/ui";
+import * as styles from "./Input.styles";
 // import './Input.module.css';
 
 const Input = (props: any) => {
-  const { name, onChange, className, decimals = 2, max, ...rest } = props;
+  const { name, onChange, className, decimals = 2, max, disabled = false, ...rest } = props;
   const { getValue, setValue } = useForm();
   const value = getValue(name);
 
@@ -19,13 +20,15 @@ const Input = (props: any) => {
     const val = e.target.value;
     const v = (val < max) ? val : max;
 
-    setValue(
-      name,
-      styleNumber(v)
-    );
+    if (!(v < 0)) {
+      setValue(
+        name,
+        styleNumber(v)
+      );
 
-    if (onChange) {
-      onChange(v);
+      if (onChange) {
+        onChange(v);
+      }
     }
   };
 
@@ -35,6 +38,10 @@ const Input = (props: any) => {
       onChange={handleChange}
       type='number'
       max={max}
+      css={[
+        styles.input,
+        disabled && styles.input_disabled,
+      ]}
       {...rest}
     />
   );

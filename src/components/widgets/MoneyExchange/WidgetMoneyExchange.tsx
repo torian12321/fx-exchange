@@ -19,17 +19,20 @@ const currList = [
 ];
 
 const Content = ({
+  onSubmit,
   isOnline = false,
   isLoading = false,
 }: any) => {
   const { getCurrencyById, updateRates, lastUpdate } = useCurrenciesState();
   const { getCurrencyById: getUserCurr } = useWalletState();
-  const { submit, values, setValue, reset } = useForm();
+  const { submit, values, setValue, getValue, reset } = useForm();
 
   const [conversionRate, setConversionRate] = useState(100);
   const [currFrom, setCurrFrom] = useState('EUR');
   const [currTo, setCurrTo] = useState('USD');
   const [maxVal, setMaxVal] = useState(0);
+
+  const val = getValue(FIELD_FROM_VAL);
 
   // Get periodically new rate values
   useInterval(updateRates, 10000);
@@ -58,15 +61,16 @@ const Content = ({
 
 
   const handleClick = () => {
-    // updateRates();
-    // const a = getCurrencyById('EUR');
-
-    // console.log('BBB', a);
-    // console.log('aaa', values)
-    submit();
+    onSubmit({
+      from: currFrom,
+      to: currTo,
+      ammount: val, //getValue(FIELD_FROM_VAL),
+      conversionRate,
+    });
   }
 
   const selectFromChange = (opVal: string) => {
+    console.log(opVal)
     setCurrFrom(opVal);
   }
   const selectToChange = (opVal: string) => {
@@ -80,36 +84,53 @@ const Content = ({
     // );
   }
   const updateFrom = (val: any) => {
-    // setValue(
-    //   FIELD_FROM_VAL,
-    //   (val / conversionRate).toFixed(2)
-    // );
+    setValue(
+      FIELD_FROM_VAL,
+      (val / conversionRate).toFixed(2)
+    );
   }
 
   return (
     <React.Fragment>
       {!!isOnline ? (
         <>
-          <Select
-            options={currList}
-            loading={!!isLoading}
-            onChange={selectFromChange}
-          />
-          {maxVal}
-          <Input name={FIELD_FROM_VAL} placeholder='0' max={maxVal} onChange={updateTo} disabled={isLoading} />
-          {/* <CurrencyBox currencyCode='EUR' /> */}
+          <div css={styles.moneyBox}>
+            <Select
+              options={currList}
+              loading={!!isLoading}
+              onChange={selectFromChange}
+              css={styles.moneyBox__select}
+            />
+            <Input
+              name={FIELD_FROM_VAL}
+              css={styles.moneyBox__input}
+              placeholder='0' max={maxVal}
+              onChange={updateTo}
+              disabled={isLoading}
+            />
+          </div>
           <ConversionBadge
             caption={`1 ${currFrom} is ${conversionRate.toFixed(2)} ${currTo}`}
             precentage={(values.from / maxVal) * 100}
           />
-          {/* <CurrencyBox currencyCode='USD' /> */}
-          <Select
-            options={currList}
-            loading={!!isLoading}
-            onChange={selectToChange}
-            defaultValue={1}
-          />
-          <Input name={FIELD_TO_VAL} placeholder='0' max={maxVal * conversionRate} onChange={updateFrom} disabled={isLoading} />
+          <div css={styles.moneyBox}>
+            <Select
+              options={currList}
+              loading={!!isLoading}
+              onChange={selectToChange}
+              defaultValue={1}
+              css={styles.moneyBox__select}
+            />
+            <Input
+              value={(val * conversionRate)}
+              name={FIELD_TO_VAL}
+              css={styles.moneyBox__input}
+              placeholder='0'
+              max={maxVal * conversionRate}
+              onChange={updateFrom}
+              disabled={isLoading}
+            />
+          </div>
         </>
       ) : <span>You are currently offline...</span>
       }
@@ -118,11 +139,11 @@ const Content = ({
   )
 }
 
-export const WidgetMoneyExchange = ({ onSubmit, ...rest }: any) => {
+export const WidgetMoneyExchange = ({ ...rest }: any) => {
   const isOnline = useIsOnline();
 
   return (
-    <Form onSubmit={onSubmit} initialValues={{
+    <Form initialValues={{
       [FIELD_FROM_VAL]: 0,
       [FIELD_TO_VAL]: 0,
     }}>

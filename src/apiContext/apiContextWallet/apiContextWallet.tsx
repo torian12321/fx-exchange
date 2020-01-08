@@ -26,7 +26,32 @@ const WalletProvider = (props: any) => {
           ...c
         })
     );
+  };
 
+  const exchangeMoney = (
+    from: CurrencyCodes,
+    to: CurrencyCodes,
+    value: number = 0,
+    rate: number = 1,
+  ) => {
+    if (from !== to) {
+      setCurrencies(
+        currencies.map((c: ICurrency) => {
+          if (c.id === from) {
+            return {
+              ...c,
+              value: (c.value - value),
+            }
+          } else if (c.id === to) {
+            return {
+              ...c,
+              value: (c.value + (value * rate)),
+            }
+          }
+
+          return { ...c };
+        }));
+    }
   };
 
   const removeMoney = (id: CurrencyCodes, value: number = 0) => {
@@ -40,6 +65,7 @@ const WalletProvider = (props: any) => {
         getCurrencyById,
         addMoney,
         removeMoney,
+        exchangeMoney,
         lastUpdate,
       }}
     >

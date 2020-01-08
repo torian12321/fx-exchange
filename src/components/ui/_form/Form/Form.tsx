@@ -10,9 +10,9 @@ const Form = (props: IForm) => {
     setValues(initialValues);
   };
   const handleSubmit = (event: any) => {
-    if (event) {
-      event.preventDefault();
-    }
+    // if (event) {
+    //   event.preventDefault();
+    // }
 
     if (onSubmit) {
       onSubmit(values);

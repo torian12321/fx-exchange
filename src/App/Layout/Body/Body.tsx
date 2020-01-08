@@ -10,20 +10,27 @@ const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const Body = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { addMoney, removeMoney } = useWalletState();
+  const { exchangeMoney } = useWalletState();
 
-  const handleExchange = async (values: any) => {
+  const handleExchange = async (args: any) => {
+    const {
+      from,
+      to,
+      ammount,
+      conversionRate,
+    } = args;
+
     // Mock an API call delay
     setIsLoading(true);
     await sleep(2000);
     setIsLoading(false);
 
-    // const { fromValue } = values;
-
-    await addMoney('EUR', 55);
-    await sleep(100);
-    await removeMoney('USD', 55);
-    // alert(`Transaction Done!!!`);
+    exchangeMoney(
+      from,
+      to,
+      ammount,
+      conversionRate
+    )
   };
 
   return (

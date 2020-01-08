@@ -9,7 +9,7 @@ export const wrapper = css`
   max-width: 400px;
   min-width: 260px;
   font-size: 1rem;
-  position: relativa;
+  position: relative;
   padding: .6em 1em;
   border-radius: ${theme.border.radius};
   box-sizing: border-box;
@@ -27,4 +27,20 @@ export const wrapperActive = css`
     background: ${functions.darkenColor(color, 2)};
     box-shadow: 0 0 1rem 0 ${transparentize(theme.colors.secondary, 0.16)};
   }
+`;
+
+
+export const moneyBox = css`
+  width: 100%;
+  margin: 20px 0;
+  display: grid;
+  grid-gap: 12px;
+  grid-template-areas: "select input";
+  grid-template-columns: 100px 1fr;
+`;
+export const moneyBox__select = css`
+  grid-area: select;
+`;
+export const moneyBox__input = css`
+  grid-area: input;
 `;
