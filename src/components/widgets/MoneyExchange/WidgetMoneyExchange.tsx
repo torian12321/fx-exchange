@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-// import Select from 'react-select';
 import {
   CurrenciesProvider, useCurrenciesState,
   WalletProvider, useWalletState,
@@ -9,29 +8,32 @@ import {
 import { useInterval, useIsOnline } from 'hooks';
 import { Button, Form, useForm } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
-import { ConversionBadge, CurrencyBox, Select, Input } from './components';
+import { ConversionBadge, /* CurrencyBox, */ Select, Input } from './components';
 
 const currList = [
   { value: 'EUR', label: 'Euro'},
   { value: 'USD', label: 'Dollar'},
   { value: 'GBP', label: 'Pound'},
 ];
+const FIELD_FROM_VAL = 'from';
+const FIELD_TO_VAL = 'from';
 
 const Content = ({
   isOnline = false,
   isLoading = false,
 } : any) => {
-  // const conversionRate = 100;
+  const { getCurrencyById, updateRates, lastUpdate } = useCurrenciesState();
+  const { getCurrencyById: getUserCurr } = useWalletState();
+  const { submit, values } = useForm();
+
   const [conversionRate, setConversionRate] = useState(100);
   const [currFrom, setCurrFrom] = useState('EUR');
   const [currTo, setCurrTo] = useState('USD');
   const [maxVal, setMaxVal] = useState(0);
 
-  const { getCurrencyById, updateRates, lastUpdate } = useCurrenciesState();
-  const { getCurrencyById: getUserCurr } = useWalletState();
-  const { submit, values } = useForm();
-
-
+  // Get periodically new rate values
+  useInterval(updateRates, 10000);
+  
   useEffect(() => {
     const c = getUserCurr(currFrom);
 
@@ -83,18 +85,19 @@ const Content = ({
             onChange={selectFromChange}
           />
           {maxVal}
-          <Input name='from' placeholder='0' max={maxVal} />
-          <CurrencyBox currencyCode='EUR' />
+          <Input name={FIELD_FROM_VAL} placeholder='0' max={maxVal} />
+          {/* <CurrencyBox currencyCode='EUR' /> */}
           <ConversionBadge
             caption={`1 ${currFrom} is ${conversionRate.toFixed(2)} ${currTo}`}
             precentage={(values.from / maxVal) * 100}
           />
-          <CurrencyBox currencyCode='USD' />
+          {/* <CurrencyBox currencyCode='USD' /> */}
           <Select
             options={currList}
             loading={!!isLoading}
             onChange={selectToChange}
           />
+          <Input name={FIELD_TO_VAL} placeholder='0' max={maxVal * conversionRate} />
         </>
         ) : <span>You are currently offline...</span>
       }
