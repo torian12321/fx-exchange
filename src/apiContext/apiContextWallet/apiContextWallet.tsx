@@ -13,6 +13,9 @@ const WalletProvider = (props: any) => {
     setLastUpdate(Date.now());
   }, [currencies]);
 
+  const getCurrencyById = (id: CurrencyCodes) =>
+    currencies.find((c: ICurrency) => c.id === id) || {};
+
   const addMoney = (id: CurrencyCodes, value: number = 0) => {
     setCurrencies(
       currencies.map((c: ICurrency) => (c.id === id)
@@ -34,6 +37,7 @@ const WalletProvider = (props: any) => {
     <Context.Provider
       value={{
         currencies,
+        getCurrencyById,
         addMoney,
         removeMoney,
         lastUpdate,

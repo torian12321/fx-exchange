@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { CurrenciesProvider, useCurrenciesState } from 'apiContext';
+// import Select from 'react-select';
+import {
+  CurrenciesProvider, useCurrenciesState,
+  WalletProvider, useWalletState,
+} from 'apiContext';
 import { useInterval, useIsOnline } from 'hooks';
-import { Button, Form, Input, useForm } from 'components/ui';
+import { Button, Form, useForm } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
-import { ConversionBadge, CurrencyBox } from './components';
+import { ConversionBadge, CurrencyBox, Select, Input } from './components';
+
+const currList = [
+  { value: 'EUR', label: 'Euro'},
+  { value: 'USD', label: 'Dollar'},
+  { value: 'GBP', label: 'Pound'},
+];
 
 const Content = ({
   isOnline = false,
@@ -15,25 +25,35 @@ const Content = ({
   const [conversionRate, setConversionRate] = useState(100);
   const [currFrom, setCurrFrom] = useState('EUR');
   const [currTo, setCurrTo] = useState('USD');
+  const [maxVal, setMaxVal] = useState(0);
 
   const { getCurrencyById, updateRates, lastUpdate } = useCurrenciesState();
+  const { getCurrencyById: getUserCurr } = useWalletState();
   const { submit, values } = useForm();
-  // const idFrom = 'EUR';
-  // const idTo = 'USD';
+
 
   useEffect(() => {
+    const c = getUserCurr(currFrom);
+
+    // Max transaction size is based on users wallet.
+    setMaxVal(c.value || 0);
+  }, [currFrom]);
+
+  useEffect(() => {
+    console.log('aaaa', currFrom);
     const f = getCurrencyById(currFrom);
     const t = getCurrencyById(currTo);
 
     if (f.rate && t.rate) {
-      setConversionRate(f.rate / t.rate)
+      setConversionRate(t.rate / f.rate)
     }
 
     console.log('ffff', f);
+    console.log(conversionRate)
     // setIsFetching(loadingValues || loadingNames)
 
     // setConversionRate();
-  }, [currFrom, currFrom, lastUpdate]);
+  }, [currFrom, currTo, lastUpdate]);
 
 
 
@@ -46,16 +66,35 @@ const Content = ({
     submit();
   }
 
-  console.log('aaa', values)
+  const selectFromChange = (opVal: string) => {
+    setCurrFrom(opVal);
+  }
+  const selectToChange = (opVal: string) => {
+    setCurrTo(opVal);
+  }
 
   return (
     <React.Fragment>
       {!!isOnline ? (
         <>
-          <Input name='from' decimals='from' placeholder='0' />
+          <Select
+            options={currList}
+            loading={!!isLoading}
+            onChange={selectFromChange}
+          />
+          {maxVal}
+          <Input name='from' placeholder='0' max={maxVal} />
           <CurrencyBox currencyCode='EUR' />
-          <ConversionBadge caption={conversionRate} precentage={100} />
+          <ConversionBadge
+            caption={`1 ${currFrom} is ${conversionRate.toFixed(2)} ${currTo}`}
+            precentage={(values.from / maxVal) * 100}
+          />
           <CurrencyBox currencyCode='USD' />
+          <Select
+            options={currList}
+            loading={!!isLoading}
+            onChange={selectToChange}
+          />
         </>
         ) : <span>You are currently offline...</span>
       }
@@ -81,6 +120,8 @@ export const WidgetMoneyExchange = ({ onSubmit, ...rest }: any) => {
 
 export const WidgetMoneyExchangeStorybook = () => (
   <CurrenciesProvider>
-    <WidgetMoneyExchange />
+    <WalletProvider>
+      <WidgetMoneyExchange />
+    </WalletProvider>
   </CurrenciesProvider>
 );
