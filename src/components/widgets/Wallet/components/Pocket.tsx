@@ -8,13 +8,13 @@ export interface IProps {
 }
 
 const Pocket = ({ value = 0 }: IProps) => {
-  const { img = '', symbol = '' } = value;
+  const { img = '', symbol = '', value: v = 0 } = value;
 
   return (
     <div css={styles.wrapper}>
       <img src={img} css={styles.image} />
       <span css={styles.label}>
-        {`${value.value} ${symbol}`}
+        {`${v.toFixed(2)} ${symbol}`}
       </span>
     </div>
   )
