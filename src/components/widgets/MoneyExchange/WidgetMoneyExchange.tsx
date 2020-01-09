@@ -45,6 +45,8 @@ const Content = ({
   }, [currFrom]);
 
   useEffect(() => {
+    // setValue(FIELD_FROM_VAL, null);
+    // setValue(FIELD_FROM_VAL, '');
     reset();
   }, [currFrom, currTo]);
 
@@ -67,6 +69,9 @@ const Content = ({
       ammount: val, //getValue(FIELD_FROM_VAL),
       conversionRate,
     });
+
+    setValue(FIELD_FROM_VAL, '');
+    // setValue(FIELD_TO_VAL, '');
   }
 
   const selectFromChange = (opVal: string) => {
@@ -144,8 +149,8 @@ export const WidgetMoneyExchange = ({ ...rest }: any) => {
 
   return (
     <Form initialValues={{
-      [FIELD_FROM_VAL]: 0,
-      [FIELD_TO_VAL]: 0,
+      // [FIELD_FROM_VAL]: 0,
+      // [FIELD_TO_VAL]: 0,
     }}>
       <div css={[
         styles.wrapper,
