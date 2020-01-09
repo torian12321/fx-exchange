@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fx-exchange/main.css",
-    "main.js": "/fx-exchange/main.1c627fc3f5de436c611d.bundle.js",
+    "main.js": "/fx-exchange/main.98c8079f405d3946dc4f.bundle.js",
     "main.css.map": "/fx-exchange/main.css.map",
-    "main.js.map": "/fx-exchange/main.1c627fc3f5de436c611d.bundle.js.map",
-    "runtime~main.js": "/fx-exchange/runtime~main.1c627fc3f5de436c611d.bundle.js",
-    "runtime~main.js.map": "/fx-exchange/runtime~main.1c627fc3f5de436c611d.bundle.js.map",
-    "vendors~main.js": "/fx-exchange/vendors~main.1c627fc3f5de436c611d.bundle.js",
-    "vendors~main.js.map": "/fx-exchange/vendors~main.1c627fc3f5de436c611d.bundle.js.map",
+    "main.js.map": "/fx-exchange/main.98c8079f405d3946dc4f.bundle.js.map",
+    "runtime~main.js": "/fx-exchange/runtime~main.98c8079f405d3946dc4f.bundle.js",
+    "runtime~main.js.map": "/fx-exchange/runtime~main.98c8079f405d3946dc4f.bundle.js.map",
+    "vendors~main.js": "/fx-exchange/vendors~main.98c8079f405d3946dc4f.bundle.js",
+    "vendors~main.js.map": "/fx-exchange/vendors~main.98c8079f405d3946dc4f.bundle.js.map",
     "iframe.html": "/fx-exchange/iframe.html",
-    "precache-manifest.7f07e8ec0c3de50b4383cae9d46c9f4a.js": "/fx-exchange/precache-manifest.7f07e8ec0c3de50b4383cae9d46c9f4a.js",
+    "precache-manifest.c63658f3df5d3e1768e6436344483bd2.js": "/fx-exchange/precache-manifest.c63658f3df5d3e1768e6436344483bd2.js",
     "service-worker.js": "/fx-exchange/service-worker.js",
     "static/media/EUR.png": "/fx-exchange/static/media/EUR.0beefbe0.png",
     "static/media/GBP.png": "/fx-exchange/static/media/GBP.0efe0676.png",
@@ -17,9 +17,9 @@
     "static/media/profit.svg": "/fx-exchange/static/media/profit.8dcba71a.svg"
   },
   "entrypoints": [
-    "runtime~main.1c627fc3f5de436c611d.bundle.js",
-    "vendors~main.1c627fc3f5de436c611d.bundle.js",
+    "runtime~main.98c8079f405d3946dc4f.bundle.js",
+    "vendors~main.98c8079f405d3946dc4f.bundle.js",
     "main.css",
-    "main.1c627fc3f5de436c611d.bundle.js"
+    "main.98c8079f405d3946dc4f.bundle.js"
   ]
 }
