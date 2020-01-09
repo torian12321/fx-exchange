@@ -6,7 +6,7 @@ const color = theme.colors.bgLight;
 
 export const wrapper = css`
   width: 100%;
-  max-width: 400px;
+  max-width: 320px;
   min-width: 260px;
   font-size: 1rem;
   position: relative;
@@ -24,7 +24,7 @@ export const wrapperActive = css`
   transition: box-shadow .4s;
 
   &:hover {
-    background: ${functions.darkenColor(color, 2)};
+    // background: ${functions.darkenColor(color, 2)};
     box-shadow: 0 0 1rem 0 ${transparentize(theme.colors.secondary, 0.16)};
   }
 `;

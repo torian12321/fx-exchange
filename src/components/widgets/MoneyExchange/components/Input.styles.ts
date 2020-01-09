@@ -13,6 +13,7 @@ export const input = css`
   border-radius: 4px;
   box-sizing: border-box;
   line-height: 2em;
+  text-align: right;
 
   border: ${theme.border.border};
   background: ${color};

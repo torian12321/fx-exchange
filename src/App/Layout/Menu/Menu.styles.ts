@@ -7,5 +7,9 @@ export const main = css`
   width: 100%;
   height: 100%;
   padding: .8em;
-  border-right: grey 2px solid;
+  border-right: none;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    border-right: grey 2px solid;
+  }
 `;
