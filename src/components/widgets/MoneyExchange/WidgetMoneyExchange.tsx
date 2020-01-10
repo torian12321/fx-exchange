@@ -6,7 +6,7 @@ import {
   WalletProvider, useWalletState,
 } from 'apiContext';
 import { useInterval, useIsOnline } from 'hooks';
-import { Button, Form, useForm } from 'components/ui';
+import { Button } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
 import { ConversionBadge, Select, Input } from './components';
 
@@ -153,14 +153,12 @@ export const WidgetMoneyExchange = ({ ...rest }: any) => {
   const isOnline = useIsOnline();
 
   return (
-    <Form>
-      <div css={[
-        styles.wrapper,
-        isOnline && styles.wrapperActive
-      ]}>
-        <Content {...rest} isOnline={isOnline} />
-      </div>
-    </Form>
+    <div css={[
+      styles.wrapper,
+      isOnline && styles.wrapperActive
+    ]}>
+      <Content {...rest} isOnline={isOnline} />
+    </div>
   )
 };
 
