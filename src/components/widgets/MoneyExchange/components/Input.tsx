@@ -24,6 +24,7 @@ const Input = (props: any) => {
       ]}
       {...rest}
     />
+  );
 };
 
 export { Input };

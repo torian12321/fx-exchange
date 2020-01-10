@@ -30,8 +30,8 @@ const Content = ({
   const [maxVal, setMaxVal] = useState(0);
 
 
-  const [from, setFrom]: [any, any] = useState(0);
-  const [to, setTo]: [any, any] = useState(0);
+  const [from, setFrom]: [any, any] = useState('');
+  const [to, setTo]: [any, any] = useState('');
 
   // Get periodically new rate values
   useInterval(updateRates, 10000);
@@ -80,10 +80,6 @@ const Content = ({
     setCurrTo(opVal);
   }
 
-
-  const [name, setName]: [any, any] = useState('');
-  const [surname, setSurname]: [any, any] = useState('');
-
   const rangeVal = (num: number, min: number, max: number) => {
     const n = num < min ? min : num;
     return n > max ? max : n;
@@ -95,17 +91,17 @@ const Content = ({
     return Number((num * 1).toFixed(2));
   };
 
-  const handleName = (v: any) => {
+  const handleFromChange = (v: any) => {
     const num = rangeVal(v, 0, maxVal);
 
-    setName(styleNumber(num));
-    setSurname(styleNumber(num * conversionRate));
+    setFrom(styleNumber(num));
+    setTo(styleNumber(num * conversionRate));
   }
-  const handleSurname = (v: any) => {
+  const handleToChange = (v: any) => {
     const num = rangeVal(v, 0, (maxVal * conversionRate));
 
-    setName(styleNumber(num / conversionRate));
-    setSurname(styleNumber(num));
+    setFrom(styleNumber(num / conversionRate));
+    setTo(styleNumber(num));
   }
 
   return (
@@ -113,19 +109,6 @@ const Content = ({
       {!!isOnline ? (
         <>
           <div css={styles.moneyBox}>
-            <input
-              type="number"
-              value={name}
-              onChange={e => handleName(e.target.value)}
-            />
-            <input
-              type="number"
-              value={surname}
-              onChange={e => handleSurname(e.target.value)}
-            />
-
-
-
             <Select
               options={currList}
               loading={!!isLoading}
@@ -133,19 +116,11 @@ const Content = ({
               css={styles.moneyBox__select}
             />
             <Input
-              value={surname}
-              onChange={handleSurname}
+              value={from}
+              onChange={handleFromChange}
               css={styles.moneyBox__input}
               disabled={isLoading}
             />
-            {/* <Input
-              value={to}
-              name={FIELD_FROM_VAL}
-              css={styles.moneyBox__input}
-              placeholder='0' max={maxVal}
-              onChange={updateFrom}
-              disabled={isLoading}
-            /> */}
           </div>
           <ConversionBadge
             caption={`1 ${currFrom} is ${conversionRate.toFixed(2)} ${currTo}`}
@@ -159,15 +134,12 @@ const Content = ({
               defaultValue={1}
               css={styles.moneyBox__select}
             />
-            {/* <Input
+            <Input
               value={to}
-              name={FIELD_TO_VAL}
+              onChange={handleToChange}
               css={styles.moneyBox__input}
-              placeholder='0'
-              max={maxVal * conversionRate}
-              onChange={updateTo}
               disabled={isLoading}
-            /> */}
+            />
           </div>
         </>
       ) : <span>You are currently offline...</span>
