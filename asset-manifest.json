@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/fx-exchange/static/css/main.e46802de.chunk.css",
-    "main.js": "/fx-exchange/static/js/main.4b72de0c.chunk.js",
-    "main.js.map": "/fx-exchange/static/js/main.4b72de0c.chunk.js.map",
+    "main.js": "/fx-exchange/static/js/main.0403dc41.chunk.js",
+    "main.js.map": "/fx-exchange/static/js/main.0403dc41.chunk.js.map",
     "runtime-main.js": "/fx-exchange/static/js/runtime-main.c0199cfe.js",
     "runtime-main.js.map": "/fx-exchange/static/js/runtime-main.c0199cfe.js.map",
     "static/js/2.16b30a2d.chunk.js": "/fx-exchange/static/js/2.16b30a2d.chunk.js",
     "static/js/2.16b30a2d.chunk.js.map": "/fx-exchange/static/js/2.16b30a2d.chunk.js.map",
     "index.html": "/fx-exchange/index.html",
-    "precache-manifest.2c8543a37e0be3b9d910416f42163ace.js": "/fx-exchange/precache-manifest.2c8543a37e0be3b9d910416f42163ace.js",
+    "precache-manifest.c5cda8b1d9b62c7544b0904621f3aa1f.js": "/fx-exchange/precache-manifest.c5cda8b1d9b62c7544b0904621f3aa1f.js",
     "service-worker.js": "/fx-exchange/service-worker.js",
     "static/css/main.e46802de.chunk.css.map": "/fx-exchange/static/css/main.e46802de.chunk.css.map",
     "static/js/2.16b30a2d.chunk.js.LICENSE": "/fx-exchange/static/js/2.16b30a2d.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c0199cfe.js",
     "static/js/2.16b30a2d.chunk.js",
     "static/css/main.e46802de.chunk.css",
-    "static/js/main.4b72de0c.chunk.js"
+    "static/js/main.0403dc41.chunk.js"
   ]
 }
