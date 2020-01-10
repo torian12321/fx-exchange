@@ -8,10 +8,8 @@ import {
 import { useInterval, useIsOnline } from 'hooks';
 import { Button, Form, useForm } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
-import { ConversionBadge, /* CurrencyBox, */ Select, Input } from './components';
+import { ConversionBadge, Select, Input } from './components';
 
-const FIELD_FROM_VAL = 'from';
-const FIELD_TO_VAL = 'to';
 const currList = [
   { value: 'EUR', label: 'Euro' },
   { value: 'USD', label: 'Dollar' },
@@ -25,14 +23,15 @@ const Content = ({
 }: any) => {
   const { getCurrencyById, updateRates, lastUpdate } = useCurrenciesState();
   const { getCurrencyById: getUserCurr } = useWalletState();
-  const { submit, values, setValue, getValue, reset } = useForm();
 
   const [conversionRate, setConversionRate] = useState(100);
   const [currFrom, setCurrFrom] = useState('EUR');
   const [currTo, setCurrTo] = useState('USD');
   const [maxVal, setMaxVal] = useState(0);
 
-  const val = getValue(FIELD_FROM_VAL);
+
+  const [from, setFrom]: [any, any] = useState(0);
+  const [to, setTo]: [any, any] = useState(0);
 
   // Get periodically new rate values
   useInterval(updateRates, 10000);
@@ -45,9 +44,7 @@ const Content = ({
   }, [currFrom]);
 
   useEffect(() => {
-    // setValue(FIELD_FROM_VAL, null);
-    // setValue(FIELD_FROM_VAL, '');
-    reset();
+    resetFields();
   }, [currFrom, currTo]);
 
   useEffect(() => {
@@ -61,38 +58,54 @@ const Content = ({
   }, [currFrom, currTo, lastUpdate]);
 
 
-
+  const resetFields = () => {
+    setFrom('');
+    setTo('');
+  }
   const handleClick = () => {
     onSubmit({
       from: currFrom,
       to: currTo,
-      ammount: val, //getValue(FIELD_FROM_VAL),
+      ammount: from,
       conversionRate,
     });
 
-    setValue(FIELD_FROM_VAL, '');
-    // setValue(FIELD_TO_VAL, '');
+    resetFields();
   }
 
   const selectFromChange = (opVal: string) => {
-    console.log(opVal)
     setCurrFrom(opVal);
   }
   const selectToChange = (opVal: string) => {
     setCurrTo(opVal);
   }
 
-  const updateTo = (val: any) => {
-    // setValue(
-    //   FIELD_TO_VAL,
-    //   (val * conversionRate).toFixed(2)
-    // );
+
+  const [name, setName]: [any, any] = useState('');
+  const [surname, setSurname]: [any, any] = useState('');
+
+  const rangeVal = (num: number, min: number, max: number) => {
+    const n = num < min ? min : num;
+    return n > max ? max : n;
   }
-  const updateFrom = (val: any) => {
-    setValue(
-      FIELD_FROM_VAL,
-      (val / conversionRate).toFixed(2)
-    );
+  const styleNumber = (num: number) => {
+    // TODO: remove leading 0s.
+
+    // Remove decimals if required
+    return Number((num * 1).toFixed(2));
+  };
+
+  const handleName = (v: any) => {
+    const num = rangeVal(v, 0, maxVal);
+
+    setName(styleNumber(num));
+    setSurname(styleNumber(num * conversionRate));
+  }
+  const handleSurname = (v: any) => {
+    const num = rangeVal(v, 0, (maxVal * conversionRate));
+
+    setName(styleNumber(num / conversionRate));
+    setSurname(styleNumber(num));
   }
 
   return (
@@ -100,6 +113,19 @@ const Content = ({
       {!!isOnline ? (
         <>
           <div css={styles.moneyBox}>
+            <input
+              type="number"
+              value={name}
+              onChange={e => handleName(e.target.value)}
+            />
+            <input
+              type="number"
+              value={surname}
+              onChange={e => handleSurname(e.target.value)}
+            />
+
+
+
             <Select
               options={currList}
               loading={!!isLoading}
@@ -107,16 +133,23 @@ const Content = ({
               css={styles.moneyBox__select}
             />
             <Input
+              value={surname}
+              onChange={handleSurname}
+              css={styles.moneyBox__input}
+              disabled={isLoading}
+            />
+            {/* <Input
+              value={to}
               name={FIELD_FROM_VAL}
               css={styles.moneyBox__input}
               placeholder='0' max={maxVal}
-              onChange={updateTo}
+              onChange={updateFrom}
               disabled={isLoading}
-            />
+            /> */}
           </div>
           <ConversionBadge
             caption={`1 ${currFrom} is ${conversionRate.toFixed(2)} ${currTo}`}
-            precentage={(values.from / maxVal) * 100}
+            precentage={(from / maxVal) * 100}
           />
           <div css={styles.moneyBox}>
             <Select
@@ -126,15 +159,15 @@ const Content = ({
               defaultValue={1}
               css={styles.moneyBox__select}
             />
-            <Input
-              value={(val * conversionRate)}
+            {/* <Input
+              value={to}
               name={FIELD_TO_VAL}
               css={styles.moneyBox__input}
               placeholder='0'
               max={maxVal * conversionRate}
-              onChange={updateFrom}
+              onChange={updateTo}
               disabled={isLoading}
-            />
+            /> */}
           </div>
         </>
       ) : <span>You are currently offline...</span>
@@ -148,10 +181,7 @@ export const WidgetMoneyExchange = ({ ...rest }: any) => {
   const isOnline = useIsOnline();
 
   return (
-    <Form initialValues={{
-      // [FIELD_FROM_VAL]: 0,
-      // [FIELD_TO_VAL]: 0,
-    }}>
+    <Form>
       <div css={[
         styles.wrapper,
         isOnline && styles.wrapperActive
