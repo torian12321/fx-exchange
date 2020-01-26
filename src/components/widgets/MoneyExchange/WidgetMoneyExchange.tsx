@@ -8,13 +8,7 @@ import {
 import { useInterval, useIsOnline } from 'hooks';
 import { Button } from 'components/ui';
 import * as styles from './WidgetMoneyExchange.styles';
-import { ConversionBadge, Select, Input } from './components';
-
-const currList = [
-  { value: 'EUR', label: 'Euro' },
-  { value: 'USD', label: 'Dollar' },
-  { value: 'GBP', label: 'Pound' },
-];
+import { ConversionBadge, MoneySelector } from './components';
 
 const Content = ({
   onSubmit,
@@ -108,39 +102,24 @@ const Content = ({
     <React.Fragment>
       {!!isOnline ? (
         <>
-          <div css={styles.moneyBox}>
-            <Select
-              options={currList}
-              loading={!!isLoading}
-              onChange={selectFromChange}
-              css={styles.moneyBox__select}
-            />
-            <Input
-              value={from}
-              onChange={handleFromChange}
-              css={styles.moneyBox__input}
-              disabled={isLoading}
-            />
-          </div>
+          <MoneySelector
+            value={from}
+            defaultValue={0}
+            isLoading={isLoading}
+            onChangeCurrency={selectFromChange}
+            onChangeValue={handleFromChange}
+          />
           <ConversionBadge
             caption={`1 ${currFrom} is ${conversionRate.toFixed(2)} ${currTo}`}
             precentage={(from / maxVal) * 100}
           />
-          <div css={styles.moneyBox}>
-            <Select
-              options={currList}
-              loading={!!isLoading}
-              onChange={selectToChange}
-              defaultValue={1}
-              css={styles.moneyBox__select}
-            />
-            <Input
-              value={to}
-              onChange={handleToChange}
-              css={styles.moneyBox__input}
-              disabled={isLoading}
-            />
-          </div>
+          <MoneySelector
+            value={to}
+            defaultValue={2}
+            isLoading={isLoading}
+            onChangeCurrency={selectToChange}
+            onChangeValue={handleToChange}
+          />
         </>
       ) : <span>You are currently offline...</span>
       }

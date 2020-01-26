@@ -6,7 +6,7 @@ import { Pocket } from './components/Pocket';
 import * as styles from "./WidgetWallet.styles";
 
 export const WidgetWallet = () => {
-  const { currencies, lastUpdate } = useWalletState();
+  const { currencies } = useWalletState();
 
   return (
     <div css={styles.wrapper}>

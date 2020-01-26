@@ -36,7 +36,7 @@ export const moneyBox = css`
   display: grid;
   grid-gap: 12px;
   grid-template-areas: "select input";
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 124px 1fr;
 `;
 export const moneyBox__select = css`
   grid-area: select;
