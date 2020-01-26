@@ -1,12 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Sel, { components } from 'react-select';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import Sel from 'react-select';
+import { useCurrenciesState } from 'apiContext';
+import * as styles from "./Select.styles";
+
+const SingleValue = (props: any) => {
+  const { data = {} } = props;
+
+  return (
+    <components.SingleValue {...props} css={styles.option}>
+      <img src={data.img} css={styles.optionImg} />
+      <span css={styles.optionTxt} >{data.id}</span>
+    </ components.SingleValue>
+  );
+};
+
+const Option = (props: any) => {
+  const { data = {} } = props;
+
+  return (
+    <components.Option {...props} css={styles.option}>
+      <img src={data.img} css={styles.optionImg} />
+      <span css={styles.optionTxt} >{data.id}</span>
+    </ components.Option>
+  );
+};
 
 export const Select = (props: any) => {
+  const { currencies = [] } = useCurrenciesState();
   const {
     name = '',
-    options = [{}],
     onChange = false,
     loading = false,
     defaultValue = 0,
@@ -16,9 +40,17 @@ export const Select = (props: any) => {
     onChange(value);
   }
 
+  const options = currencies.map((c: any) => ({
+    ...c,
+    value: c.id,
+  }));
+
   return (
     <Sel
-      // className="basic-single"
+      components={{
+        Option,
+        SingleValue,
+      }}
       defaultValue={options[defaultValue]}
       isDisabled={!!loading}
       isLoading={!!loading}
