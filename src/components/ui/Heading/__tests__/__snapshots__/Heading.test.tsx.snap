@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI Component: Header should correctly render h1 for level 1 1`] = `
+.emotion-0 {
+  margin: .5em 0;
+  display: block;
+  font-weight: bold;
+  color: #0074ea;
+}
+
+h1.emotion-0,
+h2.emotion-0 {
+  color: #0074ea;
+}
+
+h1.emotion-0 {
+  font-size: 2.4em;
+}
+
+h2.emotion-0 {
+  font-size: 2em;
+}
+
+h3.emotion-0 {
+  font-size: 1.8em;
+}
+
+h4.emotion-0 {
+  font-size: 1.25em;
+}
+
+h5.emotion-0 {
+  font-size: 1.2em;
+}
+
+h6.emotion-0 {
+  font-size: 1em;
+}
+
+<h1
+  className=" emotion-0"
+>
+  Header text
+</h1>
+`;
+
+exports[`UI Component: Header should correctly render h2 for level 2 1`] = `
+.emotion-0 {
+  margin: .5em 0;
+  display: block;
+  font-weight: bold;
+  color: #0074ea;
+}
+
+h1.emotion-0,
+h2.emotion-0 {
+  color: #0074ea;
+}
+
+h1.emotion-0 {
+  font-size: 2.4em;
+}
+
+h2.emotion-0 {
+  font-size: 2em;
+}
+
+h3.emotion-0 {
+  font-size: 1.8em;
+}
+
+h4.emotion-0 {
+  font-size: 1.25em;
+}
+
+h5.emotion-0 {
+  font-size: 1.2em;
+}
+
+h6.emotion-0 {
+  font-size: 1em;
+}
+
+<h2
+  className=" emotion-0"
+>
+  Header text
+</h2>
+`;
+
+exports[`UI Component: Header should correctly render h3 for level 3 1`] = `
+.emotion-0 {
+  margin: .5em 0;
+  display: block;
+  font-weight: bold;
+  color: #0074ea;
+}
+
+h1.emotion-0,
+h2.emotion-0 {
+  color: #0074ea;
+}
+
+h1.emotion-0 {
+  font-size: 2.4em;
+}
+
+h2.emotion-0 {
+  font-size: 2em;
+}
+
+h3.emotion-0 {
+  font-size: 1.8em;
+}
+
+h4.emotion-0 {
+  font-size: 1.25em;
+}
+
+h5.emotion-0 {
+  font-size: 1.2em;
+}
+
+h6.emotion-0 {
+  font-size: 1em;
+}
+
+<h3
+  className=" emotion-0"
+>
+  Header text
+</h3>
+`;
+
+exports[`UI Component: Header should correctly render h4 for level 4 1`] = `
+.emotion-0 {
+  margin: .5em 0;
+  display: block;
+  font-weight: bold;
+  color: #0074ea;
+}
+
+h1.emotion-0,
+h2.emotion-0 {
+  color: #0074ea;
+}
+
+h1.emotion-0 {
+  font-size: 2.4em;
+}
+
+h2.emotion-0 {
+  font-size: 2em;
+}
+
+h3.emotion-0 {
+  font-size: 1.8em;
+}
+
+h4.emotion-0 {
+  font-size: 1.25em;
+}
+
+h5.emotion-0 {
+  font-size: 1.2em;
+}
+
+h6.emotion-0 {
+  font-size: 1em;
+}
+
+<h4
+  className=" emotion-0"
+>
+  Header text
+</h4>
+`;
+
+exports[`UI Component: Header should correctly render h5 for level 5 1`] = `
+.emotion-0 {
+  margin: .5em 0;
+  display: block;
+  font-weight: bold;
+  color: #0074ea;
+}
+
+h1.emotion-0,
+h2.emotion-0 {
+  color: #0074ea;
+}
+
+h1.emotion-0 {
+  font-size: 2.4em;
+}
+
+h2.emotion-0 {
+  font-size: 2em;
+}
+
+h3.emotion-0 {
+  font-size: 1.8em;
+}
+
+h4.emotion-0 {
+  font-size: 1.25em;
+}
+
+h5.emotion-0 {
+  font-size: 1.2em;
+}
+
+h6.emotion-0 {
+  font-size: 1em;
+}
+
+<h5
+  className=" emotion-0"
+>
+  Header text
+</h5>
+`;
+
+exports[`UI Component: Header should correctly render h6 for level 6 1`] = `
+.emotion-0 {
+  margin: .5em 0;
+  display: block;
+  font-weight: bold;
+  color: #0074ea;
+}
+
+h1.emotion-0,
+h2.emotion-0 {
+  color: #0074ea;
+}
+
+h1.emotion-0 {
+  font-size: 2.4em;
+}
+
+h2.emotion-0 {
+  font-size: 2em;
+}
+
+h3.emotion-0 {
+  font-size: 1.8em;
+}
+
+h4.emotion-0 {
+  font-size: 1.25em;
+}
+
+h5.emotion-0 {
+  font-size: 1.2em;
+}
+
+h6.emotion-0 {
+  font-size: 1em;
+}
+
+<h6
+  className=" emotion-0"
+>
+  Header text
+</h6>
+`;
