@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Widget: Wallet should render no items by default 1`] = `
+<div
+  className="css-4ey8z4-WidgetWallet"
+/>
+`;
+
+exports[`Widget: Wallet should render with 3 currencies from the 'API' 1`] = `
+<div
+  className="css-4ey8z4-WidgetWallet"
+>
+  <div
+    className="css-1gtg0es-Pocket"
+  >
+    <img
+      className="css-1axo4du-Pocket"
+      src="EUR.png"
+    />
+    <span
+      className="css-3tjd33-Pocket"
+    >
+      1000.00 €
+    </span>
+  </div>
+  <div
+    className="css-1gtg0es-Pocket"
+  >
+    <img
+      className="css-1axo4du-Pocket"
+      src="GBP.png"
+    />
+    <span
+      className="css-3tjd33-Pocket"
+    >
+      1234.00 £
+    </span>
+  </div>
+  <div
+    className="css-1gtg0es-Pocket"
+  >
+    <img
+      className="css-1axo4du-Pocket"
+      src="USD.png"
+    />
+    <span
+      className="css-3tjd33-Pocket"
+    >
+      2050.00 $
+    </span>
+  </div>
+</div>
+`;

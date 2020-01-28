@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { WalletProvider, useWalletState } from 'apiContext';
@@ -6,7 +6,7 @@ import { Pocket } from './components/Pocket';
 import * as styles from "./WidgetWallet.styles";
 
 export const WidgetWallet = () => {
-  const { currencies } = useWalletState();
+  const { currencies = [] } = useWalletState();
 
   return (
     <div css={styles.wrapper}>

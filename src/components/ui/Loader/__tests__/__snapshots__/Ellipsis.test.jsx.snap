@@ -5,13 +5,13 @@ exports[`UI Component: Loader -> Ellipsis should render with 3 spans 1`] = `
   className=" css-1pmieoy-Ellipsis"
 >
   <span
-    className="css-1rppay8-Ellipsis"
+    className="css-wraxhb-Ellipsis"
   />
   <span
-    className="css-1rppay8-Ellipsis"
+    className="css-wraxhb-Ellipsis"
   />
   <span
-    className="css-1rppay8-Ellipsis"
+    className="css-wraxhb-Ellipsis"
   />
 </div>
 `;

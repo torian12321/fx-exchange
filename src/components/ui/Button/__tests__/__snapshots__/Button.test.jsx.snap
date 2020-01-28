@@ -16,80 +16,6 @@ exports[`UI Component: Button disalbed should be disabled 1`] = `
 </button>
 `;
 
-exports[`UI Component: Button disalbed should be non clickable 1`] = `
-<button
-  aria-label="Button text"
-  className=" css-w1zx51-Button"
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <span
-    className="css-1dis8g1-Button"
-  >
-    Button text
-  </span>
-</button>
-`;
-
-exports[`UI Component: Button isLoading should not be clickable 1`] = `
-<button
-  aria-label="Button text"
-  className=" css-w1zx51-Button"
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <span
-    className="css-1lzay8-Button"
-  >
-    Button text
-  </span>
-  <div
-    className="css-sjaooz-Button"
-  >
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-  </div>
-</button>
-`;
-
-exports[`UI Component: Button isLoading should render Ellipses 1`] = `
-<button
-  aria-label="Button text"
-  className=" css-w1zx51-Button"
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <span
-    className="css-1lzay8-Button"
-  >
-    Button text
-  </span>
-  <div
-    className="css-sjaooz-Button"
-  >
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-  </div>
-</button>
-`;
-
 exports[`UI Component: Button isLoading should render with Ellipses 1`] = `
 <button
   aria-label="Button text"
@@ -107,13 +33,13 @@ exports[`UI Component: Button isLoading should render with Ellipses 1`] = `
     className="css-sjaooz-Button"
   >
     <span
-      className="css-1rppay8-Ellipsis"
+      className="css-wraxhb-Ellipsis"
     />
     <span
-      className="css-1rppay8-Ellipsis"
+      className="css-wraxhb-Ellipsis"
     />
     <span
-      className="css-1rppay8-Ellipsis"
+      className="css-wraxhb-Ellipsis"
     />
   </div>
 </button>
@@ -132,67 +58,6 @@ exports[`UI Component: Button should be clickable  1`] = `
   >
     Button text
   </span>
-</button>
-`;
-
-exports[`UI Component: Button should be non clickable when disabled 1`] = `
-<button
-  aria-label="Button text"
-  className=" css-w1zx51-Button"
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <span
-    className="css-1dis8g1-Button"
-  >
-    Button text
-  </span>
-</button>
-`;
-
-exports[`UI Component: Button should render 1`] = `
-<button
-  aria-label="Button text"
-  className=" css-mslgpb-Button"
-  disabled={false}
-  onClick={[Function]}
-  type="button"
->
-  <span
-    className="css-1dis8g1-Button"
-  >
-    Button text
-  </span>
-</button>
-`;
-
-exports[`UI Component: Button should render Ellipses when isLoading 1`] = `
-<button
-  aria-label="Button text"
-  className=" css-w1zx51-Button"
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <span
-    className="css-1lzay8-Button"
-  >
-    Button text
-  </span>
-  <div
-    className="css-sjaooz-Button"
-  >
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-    <span
-      className="css-1rppay8-Ellipsis"
-    />
-  </div>
 </button>
 `;
 
