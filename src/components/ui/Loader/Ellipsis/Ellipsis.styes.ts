@@ -4,12 +4,12 @@ import { theme } from 'assets/styles';
 const opacitychange = keyframes`
   0%, 100% { opacity: .2; }
   60%      { opacity: 1; }
-`
+`;
 
 export const wrapp = css`
   font-size: 12px;
   color: ${theme.colors.secondary};
-`
+`;
 
 export const dot = css`
   display: inline-block;
@@ -21,8 +21,9 @@ export const dot = css`
   opacity: 0;
 
   animation: ${opacitychange} 1s ease infinite;
+  animation-delay: 0;
 
-  &:nth-child(1) { animation-delay: 0; }
-  &:nth-child(2) { animation-delay: 0.33s; }
-  &:nth-child(3) { animation-delay: 0.66s; }
-`
+  &:nth-of-type(1) { animation-delay: 0; }
+  &:nth-of-type(2) { animation-delay: 0.33s; }
+  &:nth-of-type(3) { animation-delay: 0.66s; }
+`;

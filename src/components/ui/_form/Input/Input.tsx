@@ -1,9 +1,7 @@
 import React from "react";
-import classNames from "classnames";
 // import { IInput } from "./Input.interfaces";
 import { useForm } from "../Form";
 import './Input.module.css';
-// import styles from "./Input.module.scss";
 
 const Input = (props: any) => {
   const { name, onChange, className, decimals = 2, ...rest } = props;

@@ -1,6 +1,5 @@
 import { css } from '@emotion/core'
 import { theme, functions } from 'assets/styles';
-import { transparentize } from 'assets/styles/functions';
 
 const color = theme.colors.bgLight;
 

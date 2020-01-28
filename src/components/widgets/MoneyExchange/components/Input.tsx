@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import * as styles from "./Input.styles";
 
 const Input = (props: any) => {
-  const { name, onChange, className, decimals = 2, max, disabled = false, value = 0, ...rest } = props;
+  const { name, onChange, className, max, disabled = false, value = 0, ...rest } = props;
 
   const handleChange = (e: any) => {
     if (onChange) {
